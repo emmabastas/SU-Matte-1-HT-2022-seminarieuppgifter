@@ -1,0 +1,67 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{mathtools}
+
+\title{Semenarieuppgift 1 - försök 1}
+\author{Emma Bastås}
+
+\begin{document}
+
+\maketitle
+
+Uppgiften är att lösa ekvationen.
+
+\begin{gather*}
+  \sqrt{x + 3} + \sqrt{2 - x} = 3 \label{ekv:0}\tag{0}
+\end{gather*}
+
+Kvadrering av båda led medför följande ekvation och ekvivalenser
+
+\begin{gather*}
+  \sqrt{x + 3} + \sqrt{2 - x} = 3                      \\
+  (\sqrt{x + 3} + \sqrt{2 - x})^{2} = 3^{2}             \\
+  (x + 3) + 2\sqrt{x + 3}\sqrt{2 - x} + (2 - x) = 9    \\
+  x - x + 3 + 2 + 2\sqrt{x + 3}\sqrt{2 - x} = 9        \\
+  2\sqrt{x + 3}\sqrt{2 - x} = 4                        \\
+  \sqrt{x + 3}\sqrt{2 - x} = 2                  \label{ekv:1}\tag{1}
+\end{gather*}
+
+Vänsterledet kan förenklas ytterligare
+
+\begin{gather*}
+  \sqrt{x + 3}\sqrt{2 - x} = \sqrt{(x + 3)(2 - x)} = \sqrt{2x + 6 - x^{2} - 3x} = \sqrt{-x^{2} - x + 6}
+\end{gather*}
+
+Vi kvadrerar återigen båda led vilket medför följande ekvation och ekvivalenser
+
+\begin{gather*}
+  (\sqrt{-x^{2} - x + 6})^{2} = 2^{2} \\
+  -x^{2} - x + 6 = 4 \\
+  -x^{2} - x + 2 = 0    \label{ekv:2}\tag{2}
+\end{gather*}
+
+Nu kvadratkompleterar vi vänsterledet
+
+\begin{gather*}
+  x^{2} + x + 2 = ((x - \frac{1}{2})^{2} - \frac{1}{4}) + 2 = (x - \frac{1}{2})^{2} + \frac{9}{4}
+\end{gather*}
+
+Den konstanta termen flyttas till högerledet och vi drar kvadratroten ur båda led, vilket medför följande ekvivalenser.
+
+\begin{gather*}
+  \sqrt{(x + \frac{1}{2})^{2}} = \pm \sqrt{\frac{9}{4}} \\
+  x + \frac{1}{2} = \pm \frac{\sqrt{9}}{2}\\
+  x = \frac{\pm 3 - 1}{2}        \label{ekv:3}\tag{3}
+\end{gather*}
+
+De två lösningar till denna ekvation (\ref{ekv:3}) är $x = 1$ och $x = - 2$.
+
+Vår ursprungliga ekvation (\ref{ekv:0}) medör (\ref{ekv:1}), medför (\ref{ekv:2}), medför (\ref{ekv:3}) som har lösningarna ovan.
+D.v.s alla lösningar till (\ref{ekv:0}) är också lösningar till (\ref{ekv:3}), men motsattsen gäller inte. Vi måste testa vilka lösningar till (\ref{ekv:3}) som också löser (\ref{ekv:0})
+
+
+
+
+\end{document}

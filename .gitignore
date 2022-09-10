@@ -1,0 +1,10 @@
+*.auctex-auto
+*.aux
+*.dvi
+*.fdb_latexmk
+*.fls
+*.log
+*.pdf
+*.gz
+*.prv
+_region_.*
