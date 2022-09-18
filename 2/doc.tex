@@ -3,6 +3,7 @@
 \usepackage{amsmath}
 \usepackage{amsthm}
 \usepackage{mathtools}
+\usepackage{hyperref}
 
 \title{Seminarieuppgift 2 - Diofantiska Ekvationer}
 \author{Emma Bastås}
@@ -11,157 +12,113 @@
 
 \maketitle
 
-Uppgiften är att finna samtiliga possitiva lösningar till följande diofantiska ekvation
+Uppgiften är att finna samtliga positiva lösningar till följande diofantiska ekvation:
 
 \begin{gather*}
-  29x + 43y = 4000 \label{*}\tag{*}
+  29x + 43y = 4000. \label{*}\tag{$\star$}
 \end{gather*}
 
 \section*{Referenser}
 
 Denna text använder sig av satser från som finnes i \emph{Algebra I, tionde tryckningen} av \emph{Bøgvad}, \emph{Xantcha} och \emph{Granath}.
 
-Kompendiet finns som PDF på https://kurser.math.su.se/pluginfile.php/143626/mod\_resource/content/12/Algebra-i-tionde-tryckningen.pdf
+Kompendiet finns som PDF på: \url{kurser.math.su.se/pluginfile.php/143626/mod_resource/content/12/Algebra-i-tionde-tryckningen.pdf}
 
-%\section*{Lösninsstrategi}
-%
-%För en ekvationen $ax + by = c$ där $a$, $b$ och $c$ är givna heltal och $GCD(a, b) \:|\: c$ är den allmäna lösningen
-%
-%\begin{gather*}
-%  \begin{cases}
-%    x = x_0 - bn \\
-%    y = y_0 - an
-%  \end{cases}
-%\end{gather*}
-%
-%där $n$ är ett godtycklig heltal och $x_0$ och $y_0$ utgör en s.k. \emph{partikulärlösning} ($ax_0 + by_0 = c$).
-%
-%\subsection*{Bevis}
-%
-%Först verifierar vi att
+\section*{Heltalslösningar}
 
-\section{Testa om ekvationen går att lösa}
-
-Enligt lemma 5.13 är $SGD(29, 43)\: |\: 4000$ ett nödvändigt vilkor för att ekv (\ref{*}) ska ha lösningar.
-
-Detta inses med hjälp av lemma 5.9 som säger att om $a$ och $b$ är heltal och $d | a$ och $d | b$ så delar $d$ även alla linjärkombinationer av $a$ och $b$
-
-$SGD(29, 43)$ delar $29 och 43$ per definition. Om det inte också delar $4000$ som lemma 5.9 anger så har vi en motsägelse, och då måste alltså antagandet $29x + 43y = 4000$ var falskt.
-
-\subsection{Beräkning av $SGD(29, 43)$}\label{berakning_av_sgd}
-
-Vi använder oss av Euklides algoritm (sats 5.10) för att beräkna $SGD(29, 43)$. Vi skriver ut alla steg i algoritmen då dessa steg kommer visa sig vara av användning senare i sektion \ref{partikularlosning}.
+Enligt lemma 5.13 är $SGD(29, 43)\: |\: 4000$ ett nödvändigt villkor för att ekv (\ref{*}) ska ha lösningar. Därför testar vi om detta villkor är uppfylt. Euklides algoritm (sats 5.10) används för att beräkna $SGD(29, 43)$ och alla steg i algoritmen skrivs ut då detta kommer visa sig vara av användning alldeles strax.
 
 \begin{align}
   &43& &=& &1& &\cdot& &29& &+& 14&& \label{sgd-1} \\
-  &29& &=& &2& &\cdot& &14& &+& 1 && \label{sgd-2}
+  &29& &=& &2& &\cdot& &14& &+& 1\text{.} && \label{sgd-2}
 \end{align}
 
-\centerline{$SGD(29, 43) = 1$}
+Av detta följer att $SGD(29, 43) = 1$ vilket delar $4000$ och vi kan således fortsätta sökandet efter lösningar.
 
-\section{Partikulärlösning}\label{partikularlosning}
-
-Första steget är att finna en partikulärlösning till en s.k. \emph{hjälpekvation}. Det är samma ekvation som (\ref{*}) men högerledet är $1$ (d.v.s $SGD(29, 43)$) istället för $4000$
+Nu betraktar vi en ekvation som liknar ekv (\ref{*}) men med högerled $1$ istället för $4000$:
 
 \begin{gather*}
-  29x + 43y = 1 \label{H}\tag{H}
+  29x + 43y = 1\text{.} \label{H}\tag{H}
 \end{gather*}
 
-För att finna en partikulärlösning till denna ekvation så kan vi använda oss av stegen från sektion (\ref{berakning_av_sgd}), fast omskrivet så att resterna står ensamma i vänsterledet.
+För att finna en \emph{partikulärlösning} till denna ekvation så använder vi ekvationerna från tidigare beräkning av $SGD(29, 43)$ med Euklides algoritm, fast omskrivet så att resterna står ensamma i vänsterledet.
 
 \begin {align*}
-  14 &= 43 - 29 \label{sgd-1*}\tag{\ref{sgd-1}*}\\
-  1 &= 29 - 2 \cdot 14 \label{sgd-2*}\tag{\ref{sgd-2}*}
+  (\text{\ref{sgd-1}}) &\iff &14 &= 43 - 29 \label{sgd-1*}\tag{\ref{sgd-1}*}\\
+  (\text{\ref{sgd-2}}) &\iff &1 &= 29 - 2 \cdot 14\text{.} \label{sgd-2*}\tag{\ref{sgd-2}*}
 \end{align*}
 
-Vi sätter in ekv (\ref{sgd-1*}) i ekv (\ref{sgd-2*}) och får
+Vi sätter in ekv (\ref{sgd-1*}) i ekv (\ref{sgd-2*}) och får:
 
 \begin{gather*}
-  1 = 29 - 2 \cdot (43 - 29)
+  1 = 29 - 2 \cdot (43 - 29)\text{,}
 \end{gather*}
 
-vilket förenklas till
+vilket förenklas till:
 
-\begin{gather*}
-  29 \cdot 3 + 43 \cdot (-2) = 1
-\end{gather*}
+\begin{gather}
+  29 \cdot 3 + 43 \cdot (-2) = 1\text{.} \label{partikularlosning_till_H}
+\end{gather}
 
-Nu ser vi att $x = 3$ och $y = (-2)$ är en lösning till hjälpekvation (\ref{H}), det är en \emph{partikulärlösning}.
-Denna partikulärlösning till hjälpekvationen betecknar vi nu med $x_{0}$ och $y_{0}$.
+Nu ser vi att $x = 3$ och $y = (-2)$ är \emph{en} lösning till ekv (\ref{H}). Vi multiplicerar båda led med $4000$:
 
-Med partikulärlösningen till hjälpekvation (\ref{H}) kan vi finna en partikulärlösning till den ursprungliga ekvationen (\ref{*}).
+\begin{align*}
+  \text{(\ref{partikularlosning_till_H})} &\iff &4000(29 \cdot 3 + 43 \cdot (-2)) = 4000 \\
+  &\iff &29 \cdot 12000 + 43 \cdot (-8000) = 4000
+\end{align*}
 
-\begin{gather*}
-  29x_{0} + 43y_{0} = 1\\
-  4000 \cdot (29x_{0} + 43y_{0} = 4000) \\
-  29 \cdot 4000x_{0} + 43 \cdot 4000y_{0} = 4000
-\end{gather*}
+och har en lösning till (\ref{*}); $x = 12000$ och $y = -8000$.
 
-Vi ser att $x = 4000x_0 = 12000$ och $y = 4000y_0 = (-8000)$ är en partikulärlösning till ekv (\ref{*}).
-
-\section*{Allmän lösning till ekvationen}
-
-Sats 5.14 anger att ekvation (\ref{*}) med har den allmäna lösningen
-
-\centerline{\textbf{TODO:} Argumentera för varför det är så}
+Sats 5.14 säger att vi givet vår diofantiska ekvationen där $SGD(29, 43) = 1$ och med en partikulärlösning får den allmäna lösningen:
 
 \begin{gather*}
   \begin{cases}
-    x = x_0 - 43n \\
-    y = y_0 + 29n
+    x = 12000 - 43n \\
+    y = -8000 + 29n
   \end{cases}
 \end{gather*}
 
-där $n$ är ett godtyckligt heltal och $x_0$ och $y_0$ är en partikulärlösing, i vårat fall $x_0 = 12000$ och $y_0 (-8000)$.
+där $n$ är ett godtyckligt heltal.
 
 
-\section*{Possitiva lösningar}
+\section*{Positiva heltalslösningar}
 
-Att finna den allmäna lösningen till ekv (\ref{*}) var dock inte uppgiften, vi ska finna \emph{samtliga possitiva lösningar}, alltså de lösningar där $x > 0$ och $y > 0$.
+Att finna den allmäna lösningen till ekv (\ref{*}) var dock inte uppgiften, vi ska finna \emph{samtliga positiva lösningar}, alltså de lösningar där $x > 0$ och $y > 0$.
 
 Om vi löser dessa två olikheter för $n$ så får vi:
 
-För $x > 0$
+För $x > 0$:
 
 \begin{align*}
-  0 &< x \\
-  0 &< 12000 - 43n \\
-  43n &< 12000 \\
-  43n &< 43 \cdot 279 + 3 \\
-  n &< 279 + 3 / 43 \label{XN}\tag{XN}
+  & &0 < 12000 - 43n \\
+  &\iff &43n < 43 \cdot 279 + 3 \\
+  &\iff &n < 279 + 3 / 43 \label{XN}\text{.} \tag{XN}
 \end{align*}
 
-För $y > 0$
+För $y > 0$:
 \begin{align*}
-  0 &< y \\
-  0 &< (-8000) + 29n \\
-  29n &> 8000 \\
-  29n &> 29 \cdot 275 + 25 \\
-  n &> 275 + 25 / 29 \label{YN}\tag{YN}
+  & &0 < (-8000) + 29n \\
+  &\iff &29n > 29 \cdot 275 + 25 \\
+  &\iff &n > 275 + 25 / 29\text{.} \label{YN}\tag{YN}
 \end{align*}
 
-Vi är dock bara intresserade heltal $n$, så olikheterna (\ref{XN}) och (\ref{YN}) skriver vi om till
+Vi är dock bara intresserade heltal $n$, så olikheterna (\ref{XN}) och (\ref{YN}) skriver vi om och kombinerar till:
+
+\begin{gather*}
+  276 \leq n \leq 279\text{.} \label{N}\tag{N}
+\end{gather*}
+
+Nu är alltså påståendet att alla lösningar ska vara positiva ekvivalent med påstående (\ref{N}).
+
+Eftersom detta endast ger oss fyra värden på $n$ -- $267$, $277$, $278$ och $279$ -- som upfyller olikheten så kan vi utan störra besvär beräkna motsvarande $x$ och $y$ värden som löser ekvationen. Vi finner då att alla positiva heltalslösningar till ekv (\ref{*}) är:
 
 \begin{align*}
-  n &\leq 279 \\
-  n &\geq 276 \\
-  \iff \\
-  267 \leq n \leq 279 \label{N}\tag{N}
+  &x = 132   &x=89 \\
+  &y = 4     &y=33 \\
+  \\
+  &x = 46    &x=3 \\
+  &y = 62    &y=91
 \end{align*}
-
-Nu är alltså påståendet om att alla lösningar ska vara possitiva ekvivalen med påstående (\ref{N}).
-
-Eftersom detta endast ger oss fyra $n$ - $267$, $277$, $278$ och $279$ - som upfyller olikheten så kan vi utan störra besvär beräkna motsvarande $x$ och $y$ värden som löser ekvationen. Vi finner då att de fyra lösningarna är
-
-\begin{itemize}
-    \item $x = 132 \\ y = 4$
-
-    \item $x = 89 \\ y = 33$
-
-    \item $x = 46 \\ y = 62$
-
-    \item $x = 3 \\ y = 91$
-\end{itemize}
 
 \centerline{$\qed$}
 
