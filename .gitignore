@@ -4,6 +4,7 @@
 *.fdb_latexmk
 *.fls
 *.log
+*.out
 *.gz
 *.prv
 _region_.*
