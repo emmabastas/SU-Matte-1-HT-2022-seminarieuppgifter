@@ -1,0 +1,82 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{mathtools}
+
+\title{Seminarieuppgift 3 - Gränsvärden}
+\author{Emma Bastås}
+
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+\begin{document}
+
+\maketitle
+
+\noindent Uppgiften är att finna följande gränsvärde:
+
+\begin{gather*}
+  \lim_{x \to (-8)}f(x)\text{,} \label{*}\tag{$\star$}
+\end{gather*}
+där:
+
+\begin{gather*}
+  f(x) = \frac {\sqrt{1 - x} - 3} {2 + \sqrt[3]{x}} \text{.}
+\end{gather*}
+\\
+Enligt definitionen av gränsvärden\footnote{Så som den är given i Persson och Böiers \emph{Analys i en variabel}, sida 139} så gäller det att om en funktion $g(x)$ är kontinuerlig i området runt $a$ och $a$ tillhör definitionsmängden av $g(x)$ så medför det att $\lim_{x \to a}g(x) = g(a)$. Betraktar vi (\ref{*}) ser vi att denna metod inte är direkt tillämpningsbar då $f(x)$ för $x = -8$ är odefinierat och således inte ingår i definitionsmängden. Det vi får gör istället är att omarbeta uttrycket i $f(x)$ så att $f(-8)$ är definierat, och därefter finna gränsvärdet.
+\\
+\\
+Innan vi påbörjar bearbetningen så substituerar vi $\sqrt[3]{x}$ för $t$, så blir uttrycket enklare att arbeta med:
+
+\begin{gather}
+  \frac{\sqrt{1 - t^{3}} - 3}{2 + t}\text{.} \label{orig_expr}
+\end{gather}
+\\
+Nu förlänger vi bråket med täljarens konjugat och förenklar:
+
+\begin{gather}
+  \text{(\ref{orig_expr})} = \frac{\sqrt{1 - t^{3}} + 3}{\sqrt{1 - t^{3}} + 3} \cdot \frac{\sqrt{1 - t^{3}} - 3}{2 + t}
+  = \frac{- (t^{3} + 8)}{(\sqrt{1 - t^{3}} + 3)(2 + t)}\text{.} \label{ext1}
+\end{gather}
+\\
+Att förlänga bråket är inte problematiskt i detta fall då täljarens konjugat aldrig är $0$, och är odefinierat i exakt de värden för $x$ där täljaren själv är odefinierad.
+\\
+Nu förlänger vi bråket med $4 - 2t + t^{2}$\footnote{Varför just detta magiska uttryck? Vi använder identiteten $(a - b)(a^{3} + ab + b^{3}) = a^{3} + b^{3}$ med avsikt att bli av med kubikroten i nämnaren.}:
+
+\begin{gather}
+  \text{(\ref{ext1})} = \frac{-( t^{3} + 8)}{(\sqrt{1 - t^{3}} + 3)(2 + t)} \cdot \frac{4 -2t + t^{2}}{4 -2t + t^{2}} =
+  \frac{-( t^{3} + 8)(4 -2t + t^{2})}{(\sqrt{1 - t^{3}} + 3)(8 + t^{3})}\text{.} \label{ext2}
+\end{gather}
+\\
+Även denna gång visar det sig vara oproblematiskt att förlänga bråket då det inte finns några värden på $x$ för vilket $4 - 2t + t^{2} = 0$.
+\\
+\\
+Nu kan faktorn $t^{3} + 8$ förkortas bort ur bråket:
+
+\begin{gather}
+  \text{(\ref{ext2})} = \frac{t^{3} + 8}{t^{3} + 8} \cdot \frac{-(4 - 2t + t^{2})}{\sqrt{1 - t^{3}} + 3} =
+  \frac{-(4 - 2t + t^{2})}{\sqrt{1 - t^{3}} + 3}\text{.}
+  \label{short}
+\end{gather}
+\\
+Att förkorta med $t^{3} + 8$ blir lite knivigare då $t^{3} + 8$ faktiskt är odefinierat i $x = -8$. Men nu tar vi ett steg tillbaka; denna algebraiska bearbetning sker inuti gränsvärdesuttrycket $lim_{x \to (-8)}$ och i detta gränsvärdesuttryck \emph{närmar} vi oss gränsvärdet $-8$, men vi kommer faktiskt aldrig att anlända dit, så att $t^{3} + 8$ är odefinierat i den punkt vi närmar oss men aldrig når är inga problem. Med andra ord:
+\\
+\\
+Vi sätter $f^{\ast}(x)$ till uttrycket i (\ref{short}), det är då sant att:
+
+\begin{gather*}
+  f(x) \neq f^{\ast}(x) \text{,}
+\end{gather*}
+\\
+Men det är samtidigt sant att:
+
+\begin{gather*}
+  \lim_{x \to (-8)} f(x) =
+  \lim_{x \to (-8)} f^{\ast}(x) =
+  f^{\ast}(-8) = -2\text{.}
+\end{gather*}
+
+\centerline{$\qed$}
+
+\end{document}
