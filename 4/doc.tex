@@ -29,7 +29,7 @@
   \text{(\ref{*})} \iff& \quad 0 < |x| + |x + 3| - 2|x+2| \\
   \iff& \quad 0 < \sqrt{x^{2}} + \sqrt{(x + 3)^{2}} - 2 \sqrt{(x + 2)^{2}}\text{.} \label{**}\tag{$\star\star$}
 \end{align*}
-\noindent Låt $f(x)$ definieras till uttrycket (\ref{**}):
+\noindent Låt $f(x)$ definieras till högerledet i uttrycket (\ref{**}):
 
 \begin{gather*}
   f(x) =  \sqrt{x^{2}} + \sqrt{(x + 3)^{2}} - 2 \sqrt{(x + 2)^{2}}\text{.}
@@ -65,25 +65,27 @@ Båda led kvadreras varefter vi förenklar så att de kvarvarande kvadratrötter
   \iff \quad & 16x^{3} + 92x^{2} + 140x + 49 = 0\text{.} \label{3rd_degree}
 \end{align}
 \\
-Nu har vi kört fast, visserligen går det att lösa tredjegradsekvationer av denna karaktär, men det ligger utanför denna seminariekurs. Om vi blickar tillbaka till (\ref{squared}) ser vi räddningen. Vi kan återigen använda identiteten $|x| = \sqrt{x^{2}}$ på (\ref{squared}):
+Nu har vi kört fast, visserligen går det att lösa tredjegradsekvationer av denna karaktär, men det ligger utanför denna seminariekurs. Om vi blickar tillbaka till ekv (\ref{squared}) ser vi räddningen. Vi kan återigen använda identiteten $|x| = \sqrt{x^{2}}$ på (\ref{squared}):
+
+\begin{align}
+  \text(\ref{squared}) \iff 2x^{2} + 10x + 7 &= 2\sqrt{x^{2}}\sqrt{(x+3)^{2}}\nonumber\\
+                        &= 2\sqrt{(x(x+3))^{2}}\nonumber\\
+                        &= 2|x(x+3)|\nonumber\\
+                        &= 2|x^{2} + 3x|\text{.} \label{single_abs}
+\end{align}
+\\
+Nu begränsar vi oss till fallet då $x^{2} + 3x \geq 0$ och löser den resulterande ekvationen:
 
 \begin{align*}
-  \text(\ref{squared}) \iff 2x^{2} + 10x + 7 &= 2\sqrt{x^{2}}\sqrt{(x+3)^{2}}\\
-                        &= 2\sqrt{(x(x+3)^{2})}\\
-                        &= 2|x(x+3)|\\
-                        &= 2|x^{2} + 3x|\text{.}
+  \text{(\ref{single_abs})} \iff \quad & 2x^{2} + 10x + 7 = 2x^{2} + 6x\\
+  \iff \quad & 4x + 7 = 0 \\
+  \iff \quad & x = -\frac{7}{4}\text{.}
 \end{align*}
-\\
-Nu kikar vi på ekvationen för fallet $x^{2} + 3x \geq 0$ och löser den resulterande ekvationen:
-
-\begin{gather*}
-  2x^{2} + 10x + 7 = 2x^{2} + 6x \iff 4x + 7 = 0 \iff  x = -\frac{7}{4}\text{.}
-\end{gather*}
 \\
 Vi ser att $x = -\frac{7}{4}$ löser ekv (\ref{squared}) vilket innebär att detta också är en lösning för (\ref{3rd_degree}) eftersom den medförs av (\ref{squared}). Faktorsatsen ger nu att $(x + \frac{7}{4})$ är en faktor till (\ref{3rd_degree}) och vi kan således utföra polynomdivison. Resultaten av en sådan division ger:
 
 \begin{gather}
-  \text{(\ref{3rd_degree})} \iff (x + \frac{7}{4})(16x^{2} + 64x + 28) = 0\text{.} \label{2nd_degree}
+  \text{(\ref{3rd_degree})} \iff (x + 7 / 4)(16x^{2} + 64x + 28) = 0\text{.} \label{2nd_degree}
 \end{gather}
 \\
 De resterande lösningarna till (\ref{3rd_degree}) är nollställerna till andragradspolynomet i (\ref{2nd_degree}), vi löser denna andragradsekvation med valfi metod, lösningarna blir:
@@ -98,7 +100,7 @@ $f(x) = 0$ har medfört ekv (\ref{2nd_degree}) som har de tre lösningarna $x = 
 Vi väljer nu två konkreta tal $a$ och $b$ som ligger till vänster respektive höger om nollstället, säg $a = -2$ och $b = 0$. Vi finner att $f(a) = 3$ och $f(b) = -1$. Nu har vi faktiskt all information vi behöver för att visa att $f < -1/2$ är lösningen till (\ref{**}):
 \\
 \\
-$f(x)$ är en kontinuerlig funktion och $x = -1/2$ är dess enda nollstället. Det finns en punkt i intervallet $]-\infty, -1/2[$, nämligen $a$ så att $f(a) > 0$. Om det finns en punkt $\mu$ i detta intervall så att $f(\mu) < 0$ så säger kontinuitetssatsen\footnote{Persson och Böiers, \emph{Analys i en variabel} upplaga 3:2 s.153} att $f(x)$ då antar alla värden mellan $f(a)$ och $f(\mu)$ i intervallet $[a, \mu]$, då måste $f(x)$ anta värdet $0$ i detta intervall. Men $x = -1/2$ är det enda nollstället och ligger inte i intervallet. Antagandet att det finns ett sådant $\mu$ i intervallet leder till en motsägelse, alltså måste dess motsats vara sann; det finns inget sådant $\mu$ i intervallet, och då gälller att $f(x) > 0$ för alla $x$ i intervallet.
+$f(x)$ är en kontinuerlig funktion och $x = -1/2$ är dess enda nollstället. Det finns en punkt i intervallet $]-\infty, -1/2[$, nämligen $a$ så att $f(a) > 0$. Om det finns ett $\mu$ i detta intervall så att $f(\mu) < 0$ så säger sats 14 i Persson och Böiers \emph{Analys i en variabel}\footnote{Upplaga 3:2 s.153} att $f(x)$ då antar alla värden mellan $f(a)$ och $f(\mu)$ i intervallet $[a, \mu]$, då måste $f(x)$ anta värdet $0$ i detta intervall. Men $x = -1/2$ är det enda nollstället och ligger inte i intervallet. Antagandet att det finns ett sådant $\mu$ i intervallet leder till en motsägelse, alltså måste dess motsats vara sann; det finns inget sådant $\mu$ i intervallet, och då gälller att $f(x) > 0$ för alla $x$ i intervallet.
 \\
 \\På samma sätt visar vi att det för alla värden av $x$ intervallet $ ]-1/2, \infty[$ gäller att $f(x) < 0$ eftersomm $b$ ligger i detta intervall och $f(b) < 0$.
 
