@@ -65,7 +65,7 @@ Båda led kvadreras varefter vi förenklar så att de kvarvarande kvadratrötter
   \iff \quad & 16x^{3} + 92x^{2} + 140x + 49 = 0\text{.} \label{3rd_degree}
 \end{align}
 \\
-Nu har vi kört fast, visserligen går det att lösa tredjegradsekvationer av denna karaktär, men det ligger utanför denna seminariekurs. Om vi blickar tillbaka till ekv (\ref{squared}) ser vi räddningen. Vi kan återigen använda identiteten $|x| = \sqrt{x^{2}}$ på (\ref{squared}):
+Nu har vi kört fast, visserligen går det att lösa tredjegradsekvationer av denna karaktär, men det ligger utanför denna seminariekurs. Om vi blickar tillbaka till (\ref{squared}) ser vi räddningen. Vi kan återigen använda identiteten $|x| = \sqrt{x^{2}}$ på (\ref{squared}):
 
 \begin{align}
   \text(\ref{squared}) \iff 2x^{2} + 10x + 7 &= 2\sqrt{x^{2}}\sqrt{(x+3)^{2}}\nonumber\\
@@ -82,7 +82,7 @@ Nu begränsar vi oss till fallet då $x^{2} + 3x \geq 0$ och löser den resulter
   \iff \quad & x = -\tfrac{7}{4}\text{.}
 \end{align*}
 \\
-Det visar sig medelst insättning av $x=-\tfrac{7}{4}$ i ekv (\ref{single_abs}) att $x = -\tfrac{7}{4}$ inte alls är en lösning, men om vi är lite slarviga (så som jag var) och ändå prövar detta värde på $x$ i ekv (\ref{3rd_degree}) så märker vi att det är en lösning! (Detta kan väll ändå inte bara vara ett kosmiskt sammanträffande!?) Nu när vi har ett nollställe till ekv (\ref{3rd_degree}) så ger faktorsatsen oss också att $x + \tfrac{7}{4}$ är en faktor till (\ref{3rd_degree}) och vi kan således utföra polynomdivison. Resultaten av en sådan division ger:
+Det visar sig medelst insättning av $x=-\tfrac{7}{4}$ i (\ref{single_abs}) att $x = -\tfrac{7}{4}$ inte alls är en lösning, men om vi är lite slarviga (så som jag var) och ändå prövar detta värde på $x$ i (\ref{3rd_degree}) så märker vi att det är en lösning! (Detta kan väll ändå inte bara vara ett kosmiskt sammanträffande!?) Nu när vi har ett nollställe till (\ref{3rd_degree}) så ger faktorsatsen oss också att $x + \tfrac{7}{4}$ är en faktor till (\ref{3rd_degree}) och vi kan således utföra polynomdivison. Resultaten av en sådan division ger:
 
 \begin{gather}
   \text{(\ref{3rd_degree})} \iff (x + \tfrac{7}{4})(16x^{2} + 64x + 28) = 0\text{.} \label{2nd_degree}
@@ -94,15 +94,15 @@ De resterande lösningarna till (\ref{3rd_degree}) är nollställerna till andra
   x = -\frac{7}{2} \quad \text{och} \quad x = - \frac{1}{2}\text{.}
 \end{gather*}
 \\
-$f(x) = 0$ har medfört ekv (\ref{2nd_degree}) som har de tre lösningarna $x = -\tfrac{7}{2}$, $x = -\tfrac{7}{4}$ och $x = -\tfrac{1}{2}$, att $x = -\tfrac{7}{4}$ inte är en lösning till $f(x) = 0$ vet vi sedan innan. Testar vi de andra två lösningarna finner vi att endast $x = -\tfrac{1}{2}$ är en lösning till $f(x) = 0$.
+$f(x) = 0$ har medfört (\ref{2nd_degree}) som har de tre lösningarna $x = -\tfrac{7}{2}$, $x = -\tfrac{7}{4}$ och $x = -\tfrac{1}{2}$, att $x = -\tfrac{7}{4}$ inte är en lösning till $f(x) = 0$ vet vi sedan innan. Testar vi de andra två lösningarna finner vi att endast $x = -\tfrac{1}{2}$ är en lösning till $f(x) = 0$.
 \\
 \\
-Vi väljer nu två konkreta tal $a$ och $b$ som ligger till vänster respektive höger om nollstället, säg $a = -2$ och $b = 0$. Vi finner att $f(a) = 3$ och $f(b) = -1$. Nu har vi faktiskt all information vi behöver för att visa att $x < -\tfrac{1}{2}$ är lösningen till (\ref{**}):
+Vi väljer nu två konkreta tal $k$ och $w$ som ligger till vänster respektive höger om nollstället, säg $k = -2$ och $w = 0$. Vi finner att $f(k) = 3$ och $f(w) = -1$. Nu har vi faktiskt all information vi behöver för att visa att $x < -\tfrac{1}{2}$ är lösningen till (\ref{**}):
 \\
 \\
-$f(x)$ är en kontinuerlig funktion och $x = -1/2$ är dess enda nollstället. Det finns en punkt i intervallet $]-\infty, -1/2[$, nämligen $a$ så att $f(a) > 0$. Om det finns ett $\mu$ i detta intervall så att $f(\mu) < 0$ så säger sats (14) i Persson och Böiers \emph{Analys i en variabel}\footnote{Upplaga 3:2 s.153} att $f(x)$ då antar alla värden mellan $f(a)$ och $f(\mu)$ i intervallet $[a, \mu]$, då måste $f(x)$ anta värdet $0$ i detta intervall. Men $x = -1/2$ är det enda nollstället och ligger inte i intervallet. Antagandet att det finns ett sådant $\mu$ i intervallet leder till en motsägelse, alltså måste dess motsats vara sann; det finns inget sådant $\mu$ i intervallet, och då gälller att $f(x) > 0$ för alla $x$ i intervallet.
+$f(x)$ är en kontinuerlig funktion och $x = -1/2$ är dess enda nollställe. Det finns en punkt $k$ i intervallet $]-\infty, -\tfrac{1}{2}[$, så att $f(k) > 0$. Antag ett $\mu$ i detta intervall så att $f(\mu) < 0$. Enligt sats (14) i Persson och Böiers \emph{Analys i en variabel}\footnote{Upplaga 3:2 s.153} medför detta att $f(x)$ kommer att anta alla värden mellan $f(k)$ och $f(\mu)$ i intervallet $[k, \mu]$. Då kommer $f(x)$ att anta värdet $0$ som ligger mellan $f(k)$ och $f(\mu)$. Men $x = -\tfrac{1}{2}$ är det enda nollstället till $f(x)$ och ligger inte i intervallet $]-\infty, -\tfrac{1}{2}[$. Antagandet att $\mu$ finns har producerat en motsägelse, alltså måste motsatsen vara sann; det finns inget $\mu$ i intervallet och då gäller att $f(x) > 0$ för alla $x$ i intervallet.
 \\
-\\På samma sätt visar vi att det för alla värden av $x$ intervallet $ ]-1/2, \infty[$ gäller att $f(x) < 0$ eftersomm $b$ ligger i detta intervall och $f(b) < 0$.
+\\På samma sätt visar vi att det för alla värden av $x$ intervallet $ ]-1/2, \infty[$ gäller att $f(x) < 0$ eftersomm $w$ ligger i detta intervall och $f(w) < 0$.
 
 \centerline{$\qed$}
 
