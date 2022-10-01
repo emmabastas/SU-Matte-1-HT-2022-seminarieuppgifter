@@ -1,0 +1,89 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{nicefrac}
+\usepackage{mdframed}
+\usepackage{lipsum}
+\usepackage[utf8]{inputenc}
+
+\newmdtheoremenv{lemma}{Theorem}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+\title{Seminarieuppgift 4 - Absolutbelopp, ``simpel version''}
+\author{Emma Bastås}
+
+\begin{document}
+
+\maketitle
+
+\noindent Uppgiften är att finna de värden på $x$ som upfyller olikheten:
+
+\begin{gather*}
+  2|x+2| < |x| + |x+3|\text{.} \label{*}\tag{$\star$}
+\end{gather*}
+\\
+Vi låter $a(x) = 2x+4$, $b(x)=x$ och $c(x) = x + 3$ och börjar med att finna alla lösningar till:
+
+\begin{gather*}
+  |a| = |b| + |c|\text{.} \label{**}\tag{$\star\star$}
+\end{gather*}
+\\
+Absolutbelopp är definierat som:
+
+\begin{gather*}
+\begin{cases}
+  x, & \text{då}\; x \geq 0\\
+  -x, & \text{då}\; x < 0
+\end{cases}\text{.}
+\end{gather*}
+\\
+För $a(x)$, $b(x)$ och $c(x)$ gäller att de är antingen $\geq 0$ eller $< 0$. Detta ger oss en ekvation med 8 fallindelningar:
+
+\begin{gather*}
+  \text{(\ref{**})} \implies
+  \begin{cases}
+    a = b + c \\
+    a = b - c \\
+    a = - b + c \\
+    a = - b - c \\
+    -a = b + c \\
+    -a = b - c \\
+    -a = - b + c \\
+    -a = - b - c \\
+  \end{cases} \label{**8}\tag{$\star\star^{8}$}
+\end{gather*}
+\\
+Vi struntar vilkoren för dessa fall och nöjer oss med det faktum att en lösning till (\ref{**}) också kommer att vara en lösning till ett av dess fall\footnote{Notera att om vi hade studerat fallen så hade vi märkt att det faktiskt finns fall som inte upfylls för något $x$, den som tycker om att tänka kan ju finna och eliminera dessa fall, vi (jag) deremot föredrar att inte tänka på dessa ting.}.
+\\
+\\
+Alla dessa fall är första- och andragradsekvationer, vi finner alla lösningar till samtliga ekvationer, den processen är tämligen ointressant och lämnas som en övning till läsaren. Lösningarna som erhålls är:
+
+\begin{gather*}
+  \text{(\ref{**8})} \iff
+  \begin{cases}
+    \text{saknar lösningar.} \\
+    x = - \nicefrac{7}{2} \\
+    x = - \nicefrac{1}{2} \\
+    x = - \nicefrac{7}{4} \\
+    x = - \nicefrac{7}{4} \\
+    x = - \nicefrac{1}{2} \\
+    x = - \nicefrac{7}{2} \\
+    \text{saknar lösningar.} \\
+  \end{cases}
+\end{gather*}
+\\
+Tre unika lösningar totalt som har medförts av (\ref{**}). Vi testar alla tre värden i (\ref{**}) medelst insättning och finner att $x = -\tfrac{1}{2}$ är den enda lösningen till (\ref{**}). Nu är det dags för slutklämmen och detta kräver faktiskt tankeverksamhet:
+\\
+\\
+Låt $f(x) = |b(x)| + |c(x)| - |a(x)|$, detta är en kontinuerlig funktion med endast ett nollställe, nämligen $-\tfrac{1}{2}$. Det gäller att $f(-2) > 0$. Antag nu att det finns ett $\mu < -\tfrac{1}{2}$ så att $f(\mu) < 0$. Då $f(x)$ är kontinuerlig kommer $f(x)$ anta alla värden mellan $f(-2)$ och $f(\mu)$ i intervallet $\left[-2, \mu\right]$. Då kommer $f(x)$ att anta $0$ eftersom $f(\mu) < 0 < f(-2)$. Men $x = -\tfrac{1}{2}$ är enda nollstället och $\mu$ kan omöjligt vara detta värde då vi antog att $\mu < -\tfrac{1}{2}$. Antagandet att $\mu$ finns har producerat en motsägelse och då måste motsatsen vara sann; Det finns inget sådant $\mu$. Det är då garanterat att $f(x) > 0$ för alla $x < -\tfrac{1}{2}$. $f(x) > 0$ är ekvivalent med $|a(x)| < |b(x)| + |c(x)|$.
+\\
+\\På samma sätt visar vi att det för alla $x > -1/2$ gäller att $|a(x)| > |b(x)| + |c(x)|$ eftersomm talet $0 > -\tfrac{1}{2}$ och $|a(0)| > |b(0)| + |c(0)|$.
+\\
+\\
+Det enda intervallet som upfyller olikheten (\ref{*}) är då $x < -\tfrac{1}{2}$.
+
+\centerline{$\qed$}
+
+\end{document}
