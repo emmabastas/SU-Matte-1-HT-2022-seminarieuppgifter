@@ -66,17 +66,17 @@ Vi låter $y = x(x+3)$ och substituerar in det it (\ref{squared}):
 Vi noterar att beroende på $x$ är antingen $y \geq 0$ varpå $\sqrt{y^{2}} = y$ eller så är $y < 0$ varpå $\sqrt{y^{2}} = -y$. Det ger två fall för (\ref{with_y}):
 
 \begin{align}
+  \text{(\ref{with_y})} \iff
   \begin{cases}
-    \text{(\ref{with_y})} \implies 2x^{2} + 10x + 7 = 2y, & \text{då}\; y \geq 0 \\
-    \text{(\ref{with_y})} \implies 2x^{2} + 10x + 7 = -2y, & \text{då}\; y < 0
+    2x^{2} + 10x + 7 = 2y, & \text{då}\; y \geq 0 \\
+    2x^{2} + 10x + 7 = -2y, & \text{då}\; y < 0
   \end{cases}\text{.} \label{cases}
 \end{align}
 \\
-Detta ger oss en första- respektive andragradsekvation, lösningarna är $x = -\tfrac{7}{2}$, $x = -\tfrac{7}{4}$ och $x = -\tfrac{1}{2}$. (\ref{initial}) har medfört (\ref{cases}), alltså finns alla lösningar till (\ref{initial}) bland dessa tre värden på $x$\footnote{Ett annat sätt att överyga sig själv om att vi inte missat någon lösning till (\ref{initial}) är att kvadrera båda led i (\ref{squared}). Detta ger en tredjegradsekvation och de tre lösningar vi fann här löser också den ekvationen.}
-, vi testar var och ett medelts insättning i (\ref{initial}) och finner att $x = -\frac{1}{2}$ är den enda lösningen till $f(x) = 0$.
+Plockar vi bort vilkoren från (\ref{cases}) implicerar detta en vanlig första- respektive andragradsekvaion med lösningarna $x = -\tfrac{7}{2}$, $x = -\tfrac{7}{4}$ och $x = -\tfrac{1}{2}$. (\ref{initial}) har medfört dessa lösningar och vi testar vilka som också löser (\ref{initial}) medelst insättning och finner att $x = -\tfrac{1}{2}$ är den enda lösningen.\footnote{Om du har en gnagande oro över att vi missat någon lösning så prova att kvadrera båda led i (\ref{squared}). Detta ger en tredjegradsekvation och de tre lösningar vi fann här löser också den ekvationen. Varför det är på detta sätt förstår jag inte, men det kan väll inte vara en slump!?}
 \\
 \\
-Vi väljer nu två konkreta tal $k$ och $w$ som ligger till vänster respektive höger om nollstället, säg $k = -2$ och $w = 0$. Vi finner att $f(k) = 3$ och $f(w) = -1$. Nu har vi faktiskt all information vi behöver för att visa att $x < -\tfrac{1}{2}$ är lösningen till $f(x) > 0$:
+Vi väljer nu två konkreta tal $k$ och $w$ som ligger till vänster respektive höger om nollstället, säg $k = -2$ och $w = 0$. Vi finner att $f(k) = 3$ och $f(w) = -1$. Nu kommer slutklämmen:
 \\
 \\
 $f(x)$ är en kontinuerlig funktion och $x = -\tfrac{1}{2}$ är dess enda nollställe. Det finns en punkt $k$ i intervallet $\left]-\infty, -\tfrac{1}{2}\right[$ så att $f(k) > 0$. Antag ett $\mu$ i detta intervall så att $f(\mu) < 0$. Enligt sats (14) i Persson och Böiers \emph{Analys i en variabel}\footnote{Upplaga 3:2 s.153} medför detta att $f(x)$ kommer att anta alla värden mellan $f(k)$ och $f(\mu)$ i intervallet $\left[k, \mu\right]$. Då kommer $f(x)$ anta värdet $0$. Men $x = -\tfrac{1}{2}$ är det enda nollstället till $f(x)$ och ligger inte i intervallet $\left]-\infty, -\tfrac{1}{2}\right[$. Antagandet att $\mu$ finns har producerat en motsägelse, alltså måste motsatsen vara sann; det finns inget $\mu$ i intervallet och då gäller $f(x) > 0$ för alla $x$ i intervallet.
