@@ -17,7 +17,7 @@
 
 \maketitle
 
-\noindent Uppgiften är att finna de värden på $x$ som upfyller olikheten:
+\noindent Uppgiften är att finna de värden på $x$ som uppfyller olikheten:
 
 \begin{gather*}
   2|x+2| < |x| + |x+3|\text{.} \label{*}\tag{$\star$}
@@ -38,7 +38,7 @@
 \noindent Uppgiften omformuleras nu till denna ekvivalenta problemställning:
 \\
 \\
-\centerline{\emph{Finn de värden på $x$ som upfyller olikheten: $f(x) > 0$.}}
+\centerline{\emph{Finn de värden på $x$ som uppfyller olikheten: $f(x) > 0$.}}
 \\
 \\
 Nu finner vi alla nollställen till $f(x)$, vi börjar med att ställa upp ekvationen och flytta över en av rötterna till högerledet:
@@ -52,7 +52,7 @@ Nu finner vi alla nollställen till $f(x)$, vi börjar med att ställa upp ekvat
 Båda led kvadreras varefter vi förenklar så att de kvarvarande kvadratrötterna står ensamma i högerledet:
 
 \begin{align}
-  \text{(\ref{initial})} \implies \quad & \biggl(\sqrt{x^{2}} + \sqrt{(x + 3)^{2}}\biggr)^{2} = \biggl(2 \sqrt{(x + 2)^{2}}\biggr)^{2}\text{.} \nonumber\\
+  \text{(\ref{initial})} \implies \quad & \biggl(\sqrt{x^{2}} + \sqrt{(x + 3)^{2}}\biggr)^{2} = \biggl(2 \sqrt{(x + 2)^{2}}\biggr)^{2} \nonumber\\
   \iff \quad & x^{2} + 2\sqrt{x^{2}}\sqrt{(x+3)^{2}} + (x + 3)^{2} = 4(x+2)^{2} \nonumber\\
   \iff \quad & 2x^{2} + 10x + 7 = 2\sqrt{(x(x+3))^{2}}\text{.} \label{squared}
 \end{align}
@@ -73,15 +73,15 @@ Vi noterar att beroende på $x$ är antingen $y \geq 0$ varpå $\sqrt{y^{2}} = y
   \end{cases}\text{.} \label{cases}
 \end{align}
 \\
-Plockar vi bort vilkoren från (\ref{cases}) implicerar detta en vanlig första- respektive andragradsekvaion med lösningarna $x = -\tfrac{7}{2}$, $x = -\tfrac{7}{4}$ och $x = -\tfrac{1}{2}$. (\ref{initial}) har medfört dessa lösningar och vi testar vilka som också löser (\ref{initial}) medelst insättning och finner att $x = -\tfrac{1}{2}$ är den enda lösningen.\footnote{Om du har en gnagande oro över att vi missat någon lösning så prova att kvadrera båda led i (\ref{squared}). Detta ger en tredjegradsekvation och de tre lösningar vi fann här löser också den ekvationen. Varför det är på detta sätt förstår jag inte, men det kan väll inte vara en slump!?}
+Plockar vi bort villkoren från (\ref{cases}) implicerar detta en vanlig första- respektive andragradsekvaiton med lösningarna $x = -\tfrac{7}{2}$, $x = -\tfrac{7}{4}$ och $x = -\tfrac{1}{2}$. (\ref{initial}) har medfört dessa lösningar och vi testar vilka som också löser (\ref{initial}) medelst insättning och finner att $x = -\tfrac{1}{2}$ är den enda lösningen.\footnote{Om du har en gnagande oro över att vi missat någon lösning så prova att kvadrera båda led i (\ref{squared}). Detta ger en tredjegradsekvation och de tre lösningar vi fann här löser också den ekvationen. Varför det är på detta sätt förstår jag inte, men det kan väl inte vara en slump!?}\footnote{Det går faktiskt att använda knepet med att plocka bort villkoren redan innan vi kvadrerar, då hade vi erhållit 8 mycket enkla ekvationer med samma lösningar.}
 \\
 \\
-Nu till slutklämmen:
+Nu påstår vi att $x < -\tfrac{1}{2}$ är lösningen till $f(x) > 0$ med följande resonemang:
 \\
 \\
 $f(x)$ är en kontinuerlig funktion och $x = -\tfrac{1}{2}$ är dess enda nollställe. Talet $-2$ ligger i intervallet $\left]-\infty, -\tfrac{1}{2}\right[$ och $f(-2) > 0$. Antag ett $\mu$ i detta intervall så att $f(\mu) < 0$. Enligt sats (14) i Persson och Böiers \emph{Analys i en variabel}\footnote{Upplaga 3:2 s.153} medför detta att $f(x)$ antar alla värden mellan $f(-2)$ och $f(\mu)$ i intervallet $\left[-2, \mu\right]$. Då kommer $f(x)$ anta värdet $0$. Men $x = -\tfrac{1}{2}$ är det enda nollstället till $f(x)$ och ligger inte i intervallet. Antagandet att $\mu$ finns har producerat en motsägelse, alltså måste motsatsen vara sann; det finns inget $\mu$ i intervallet och då gäller $f(x) > 0$ för alla $x$ i intervallet.
 \\
-\\På samma sätt visar vi att det för alla värden av $x$ intervallet $ \left]-1/2, \infty\right[$ gäller att $f(x) < 0$ eftersomm talet $0$ ligger i detta intervall och $f(0) < 0$.
+\\På samma sätt visar vi att det för alla värden av $x$ intervallet $ \left]-1/2, \infty\right[$ gäller att $f(x) < 0$ eftersom talet $0$ ligger i detta intervall och $f(0) < 0$.
 
 \centerline{$\qed$}
 

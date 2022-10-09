@@ -22,12 +22,6 @@ Namge filer på formatet ~Bastas_Alg<uppgift>V<version>.pdf~
 * DONE Läs allmäna kommentarer
 https://kurser.math.su.se/pluginfile.php/143621/mod_forum/attachment/59087/kommentarer.pdf
 
-* TODO Skriv uppgift 3
+* DONE Skriv uppgift 3
 
-* TODO Skriv uppgift 4
-
-#+begin_quote
-    1. Namnge din fil enligt formatet Sisask_Alg1V2.pdf, där Alg1 står för Algebra uppgift 1, och V2 står för version 2 (dvs resultatet av den första revideringen). Det kommer göra det mycket lättare att hålla saker organiserade när nya uppgifter ska lämnas in, och sedan också när analysen börjar.
-    2. Undvik att börja meningar med symboler -- det kan se konstigt ut och göra flytet lite svårare att hänga med på.
-    3. Prova att läsa din lösning högt -- det ska flyta på som vanligt tal. (Om ska läsa t.ex. högt så kan du helt enkelt uttala det som "x är lika med blahblahblah" för flyt-kollande-ändamål.)
-#+end_quote
+* DONE Skriv uppgift 4

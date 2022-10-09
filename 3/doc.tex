@@ -40,13 +40,13 @@ Nu förlänger vi bråket med täljarens konjugat och förenklar:
   = \frac{- (t^{3} + 8)}{(\sqrt{1 - t^{3}} + 3)(2 + t)}\text{.} \label{ext1}
 \end{gather}
 \\
-Att förlänga bråket är inte problematiskt i detta fall då täljarens konjugat aldrig är $0$, och är odefinierat i exakt de värden för $x$ där täljaren själv är odefinierad.
+Att förlänga bråket är inte problematiskt i detta fall då täljarens konjugat aldrig är $0$, och är odefinierat i exakt de värden för $x$ där (\ref{orig_expr}) är odefinierad.
 \\
-Nu förlänger vi bråket med $4 - 2t + t^{2}$\footnote{Varför just detta magiska uttryck? Vi använder identiteten $(a - b)(a^{3} + ab + b^{3}) = a^{3} + b^{3}$ med avsikt att bli av med kubikroten i nämnaren.}:
+Nu förlänger vi bråket med $4 - 2t + t^{2}$:
 
 \begin{gather}
   \text{(\ref{ext1})} = \frac{-( t^{3} + 8)}{(\sqrt{1 - t^{3}} + 3)(2 + t)} \cdot \frac{4 -2t + t^{2}}{4 -2t + t^{2}} =
-  \frac{-( t^{3} + 8)(4 -2t + t^{2})}{(\sqrt{1 - t^{3}} + 3)(8 + t^{3})}\text{.} \label{ext2}
+  \frac{-( t^{3} + 8)(4 -2t + t^{2})}{(\sqrt{1 - t^{3}} + 3)(t^{3} + 8)}\text{.} \label{ext2}
 \end{gather}
 \\
 Även denna gång visar det sig vara oproblematiskt att förlänga bråket då det inte finns några värden på $x$ för vilket $4 - 2t + t^{2} = 0$.
@@ -60,7 +60,7 @@ Nu kan faktorn $t^{3} + 8$ förkortas bort ur bråket:
   \label{short}
 \end{gather}
 \\
-Att förkorta med $t^{3} + 8$ blir lite knivigare då $t^{3} + 8$ faktiskt är odefinierat i $x = -8$. Men nu tar vi ett steg tillbaka; denna algebraiska bearbetning sker inuti gränsvärdesuttrycket $lim_{x \to (-8)}$ och i detta gränsvärdesuttryck \emph{närmar} vi oss gränsvärdet $-8$, men vi kommer faktiskt aldrig att anlända dit, så att $t^{3} + 8$ är odefinierat i den punkt vi närmar oss men aldrig når är inga problem. Med andra ord:
+Att rättfärdiga validiteten i denna förkortning är lite knivigare då $t^{3} + 8$ faktiskt är $0$ då $x = -8$. Men nu tar vi ett steg tillbaka; denna algebraiska bearbetning sker inuti gränsvärdesuttrycket $lim_{x \to (-8)}$ och i detta gränsvärdesuttryck \emph{närmar} vi oss gränsvärdet $-8$, men vi kommer faktiskt aldrig att anlända dit, så att $t^{3} + 8$ är odefinierat i den punkt vi närmar oss men aldrig når är inga problem. Med andra ord:
 \\
 \\
 Vi sätter $f^{\ast}(x)$ till uttrycket i (\ref{short}), det är då sant att:

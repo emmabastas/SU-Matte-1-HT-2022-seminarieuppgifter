@@ -1,5 +1,7 @@
 \documentclass{article}
 
+\usepackage{float}
+\usepackage{graphicx}
 \usepackage{amsmath}
 \usepackage{amsthm}
 \usepackage{mathtools}
@@ -74,15 +76,16 @@ Alla dessa fall är första- och andragradsekvationer, vi finner alla lösningar
   \end{cases}
 \end{gather*}
 \\
-Tre unika lösningar totalt som har medförts av (\ref{**}). Vi testar alla tre värden i (\ref{**}) medelst insättning och finner att $x = -\tfrac{1}{2}$ är den enda lösningen till (\ref{**}). Nu är det dags för slutklämmen och detta kräver faktiskt tankeverksamhet:
+Tre unika lösningar totalt som har medförts av (\ref{**}). Vi testar alla tre värden i (\ref{**}) medelst insättning och finner att $x = -\tfrac{1}{2}$ är den enda lösningen till (\ref{**}).
 \\
 \\
-Låt $f(x) = |b(x)| + |c(x)| - |a(x)|$, detta är en kontinuerlig funktion med endast ett nollställe, nämligen $-\tfrac{1}{2}$. Det gäller att $f(-2) > 0$. Antag nu att det finns ett $\mu < -\tfrac{1}{2}$ så att $f(\mu) < 0$. Då $f(x)$ är kontinuerlig kommer $f(x)$ anta alla värden mellan $f(-2)$ och $f(\mu)$ i intervallet $\left[-2, \mu\right]$. Då kommer $f(x)$ att anta $0$ eftersom $f(\mu) < 0 < f(-2)$. Men $x = -\tfrac{1}{2}$ är enda nollstället och $\mu$ kan omöjligt vara detta värde då vi antog att $\mu < -\tfrac{1}{2}$. Antagandet att $\mu$ finns har producerat en motsägelse och då måste motsatsen vara sann; Det finns inget sådant $\mu$. Det är då garanterat att $f(x) > 0$ för alla $x < -\tfrac{1}{2}$. $f(x) > 0$ är ekvivalent med $|a(x)| < |b(x)| + |c(x)|$.
-\\
-\\På samma sätt visar vi att det för alla $x > -1/2$ gäller att $|a(x)| > |b(x)| + |c(x)|$ eftersomm talet $0 > -\tfrac{1}{2}$ och $|a(0)| > |b(0)| + |c(0)|$.
+Vi noterar att $|a(-2)| < |b(-2)| + |c(-2)|$ och $|a(0)| > |b(0)| + |c(0)|$. Nu påstår vi att $x < -\tfrac{1}{2}$ är lösningen till (\ref{*}):
 \\
 \\
-Det enda intervallet som upfyller olikheten (\ref{*}) är då $x < -\tfrac{1}{2}$.
+Antag ett $\mu < -\tfrac{1}{2}$ så att $|a(\mu)| > |b(\mu)| + |c(\mu)|$. Då följer att det i $[-2, \mu]$ finns ett $x$ så att $|a(x)| = |b(x)| + |c(x)|$. Men $-\tfrac{1}{2}$ är det enda värde på $x$ då denna likhet gäller. Antagandet att $\mu$ finns har producerat en motsägelse och då gäller motsatsen; Det finns inget sådant $\mu$ och därför gäller $|a(x)| < |b(x)| + |c(x)|$ för alla $x < -\tfrac{1}{2}$.
+\\
+\\
+Med samma resonemang hävdar vi att $|a(x)| > |b(x)| + |c(x)|$ för alla $x > -\tfrac{1}{2}$ eftersom att $0 > -\tfrac{1}{2}$ och $|a(0)| > |b(0)| + |c(0)|$.
 
 \centerline{$\qed$}
 
