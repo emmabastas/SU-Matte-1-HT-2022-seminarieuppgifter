@@ -12,44 +12,44 @@
 
 \title{Seminarieuppgift 5 - Tangenter genom punkt}
 \author{Emma Bastås}
+\date{Oktober 9, 2022}
 
 \begin{document}
 
 \maketitle
 
-\noindent Uppgiften är att finna de tangenter till $y = f(x)$ (om det finns några) som går genom punkten $P$ där $f(x) = 2x^{3} - 3x + 5$ och $P = (0, 1)$.
+\noindent Uppgiften är att finna de tangenter (om det finns några) till $y = f(x)$ som går genom punkten $P$ där $f(x) = 2x^{3} - 3x + 5$ och $P = (0, 1)$. \\
+\\
+Persson och Böiers definition av tangenter\footnote{\emph{Analys i en variabel,} Upplaga 3:2 s.189 \textbf{Geometrisk tolkning av derivata.}} ger att tangenten till $y = f(x)$ i punkten $(x_{0}, f(x_{0}))$ är den räta linje som uppfyller ekvationen:
+
+\begin{gather}
+  y - f(x_{0}) = f'(x_{0})(x - x_{0})\text{.} \label{orig}
+\end{gather}
+\\
+Persson och Böiers anger också att en rät linje (som inte är parallell med $y$-axeln) och som går genom $(0, 1)$ ges av ekvationen\footnote{\emph{Analys i en variabel}, Upplaga 3:2 s.25.}:
+
+\begin{gather}
+  y = kx + 1\text{.} \label{enpunktsform}
+\end{gather}
+\\
+Detta ger att alla värden på $x_{0}$ för vilket (\ref{orig}) är ekvivalent med (\ref{enpunktsform}) ger en rät linje som är både tangent till $y = f(x)$ och går genom $P$, vilket är vad vi söker.
 \\
 \\
-Persson och Böiers definierar\footnote{\emph{Analys i en variabel,} Upplaga 3:2 s.189 \textbf{Geometrisk tolkning av derivata.}} tangenten till funktionskurvan $y = f(x)$ i punkten $(x_{0}, f(x_{0}))$ som den linje vars ekvation är:
+Vi expanderar $f(x_{0})$ och $f'(x_{0})$ i (\ref{orig}) och omarbetar ekvationen till att vara på samma form som i (\ref{enpunktsform}):
+
+\begin{align}
+  \text{(\ref{orig})} \iff \quad & y - (2x_{0}^{3} - 3x_{0} + 5) = (6x_{0}^{2} - 3)(x - x_{0}) \nonumber \\
+  \iff \quad & y = x(6x_{0}^{2} - 3) - 4x_{0}^{3} + 5\text{.} \label{processed}
+\end{align}
+\\
+Nu ser vi att (\ref{processed}) är ekvivalent med (\ref{enpunktsform}) då $-4x_{0}^{3} + 5 = 1$ vilket inträffar då $x_{0} = 1$. Vi sätter in $x_{0} = 1$ i (\ref{processed}) och erhåller den räta linjen:
 
 \begin{gather*}
-  y = f'(x_{0})(x - x_{0}) + f(x_{0})\text{.} \label{*}\tag{$\star$}
+  y = 3x + 1 \label{solution}
 \end{gather*}
 \\
-Att en linje $y = g(x)$ går genom en punkt $I$ är ett ekvivalent påstående med att $I_{y} = g(I_{x})$. För oss som är intresserade av de fall då linjen (\ref{*}) går genom punkten $P$ finnes dessa då fall likheten:
+som vi visat är den enda tangenten till $y = f(x)$ som går genom $P$. $\qed$
 
-\begin{gather*}
-  P_{y} = f'(x_{0})(P_{x} - x_{0}) + f(x_{0}) \label{**}\tag{$\star\star$}
-\end{gather*}
-\\
-gäller. Här är $x_{0}$ den enda obekanta, vi expanderar $P_{y}$, $P_{x}$, $f'(x_{0})$ och $f(x_{0})$ och löser ekvationen:
-
-\begin{align*}
-  \text{(\ref{**})} \iff \quad & 1 = (6x_{0}^{3})(0 - x_{0}) + 2x_{0}^{3} - 3x_{0} + 5 \\
-  \iff \quad & x_{0}^{3} = 1 \\
-  \iff \quad & x_{0} = 1\text{.}
-\end{align*}
-\\
-Ekvationen (\ref{**}) har alltså $x_{0} = 1$ som enda lösning. Detta innebär att (\ref{*}) går genom $P$ då $x_{0} = 1$. Sätter vi in $x_{0} = 1$ i (\ref{*}) och förenklar får vi linjen:
-
-\begin{align*}
-  & y = f'(1)(x - 1) + f(1) \\
-  \iff \quad & y = (6 - 3)(x - 1) + 2 - 3 + 5 \\
-  \iff \quad & y = 3x + 1
-\end{align*}
-\\
-Som alltså är den enda tangenten till $f(x)$ som går igenom $P$.
-
-\centerline{$\qed$}
+\thispagestyle{empty}
 
 \end{document}
