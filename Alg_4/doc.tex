@@ -1,0 +1,120 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{systeme}
+\usepackage{lipsum}
+
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+\title{Seminarieuppgift 6 - Lösningar till ekvationssystem}
+\author{Emma Bastås}
+\date{Oktober 9, 2022}
+
+\begin{document}
+
+\maketitle
+
+\noindent Uppgiften är att till varje reellt tal $a$ bestämma antalet lösningar till följande ekvationssystem:
+
+\begin{gather*}
+  \begin{cases}
+  (4 - a)x_{1} + 2x_{2} - x_{3} = 1\\
+  -2x_{1} + (1 - a)x_{2} + 2x_{3} = -2\\
+  -x_{1} + 2x_{2} + (4 - a)x_{3} = 1
+  \end{cases}\text{.} \tag{$\star$}\label{*}
+\end{gather*}
+\\
+Först noterar vi att alla tre ekvationer är linjära, och vi kan därför skriva om ekvationssystem till denna ekvivalenta matrisekvation:
+
+\begin{gather*}
+  \text{(\ref{*})} \iff AX = B\text{.}
+\end{gather*}
+
+där:
+\begin{gather*}
+  A =
+  \begin{pmatrix}
+    4 - a & 2 & - 1 \\
+    -2 & 1 - a & 2 \\
+    -1 & 2 & 4 - a
+  \end{pmatrix}\quad
+  X =
+  \begin{pmatrix}
+    x_{1} \\
+    x_{2} \\
+    x_{3}
+  \end{pmatrix}\quad
+  B =
+  \begin{pmatrix}
+    1 \\
+    -2 \\
+    1
+  \end{pmatrix}\text{.}
+\end{gather*}
+\\
+För linjära matrisekvationer på denna form finns precis tre möjligheter avseende lösningar:
+\begin{itemize}
+  \item Det finns ingen lösning.
+  \item Det finns precis en lösning.
+  \item Det finns oöndligt månda lösningar.
+\end{itemize}
+
+\noindent Att determinanten till $A$ är skiljd från noll är ekvivalent med att $A$ har en invers, vilket i sin tur är ekvivalent med att $AX = B$ har precis en lösning (nämligen $X = A^{-1}B$). Är determinanten noll så gäller då antingen att ingen eller oändligt många lösningar till $AX = B$ finns.
+\\
+\\
+Vi finner nu de värden på $a$ för vilket $\det A = 0$. Här använder vi oss helt enkelt av den otympliga identiteten $det A = a_{11} a_{22} a_{33} + a_{12} a_{23} a_{31} + a_{13} a_{21} a_{32} - a_{11} a_{23} a_{32} - a_{12} a_{21} a_{33} - a_{13} a_{22} a_{31} $. Men det går lika bra att använda annan en metod, t.ex Sarrus regel eller cofaktorexpansion.
+
+\begin{align}
+  &\det A = 0\nonumber\\
+  \iff \quad &(4 - a)(1 - a)(4 - a) + 2\cdot2\cdot(-1) + (-1)\cdot(-2)\cdot2\nonumber\\
+  &- (4 - a)\cdot2\cdot2 - 2\cdot(-2)\cdot(4 - a) - (-1)\cdot(1 - a)\cdot(-1) = 0\nonumber\\
+  \iff \quad &-a^{3} + 9a^{2} -23a +15 = 0\text{.} \label{3rd_degree}
+\end{align}
+
+Att lösa tredjegradsekvationer ligger utanför denna seminariekurs, men rationella rotsatsen ger oss att alla lösningarna till (\ref{3rd_degree}) är något av talen $\pm1, \cdots, \pm 15$. 30 potentiella lösningar är tillräckligt få för att det ska vara görbart att testa var och en av dom. Vi gör detta och finner en lösning redan vid första försöket! $a = 1$. Nu kan vi medelst faktorssatsen och polynomdivision skriva om till (\ref{3rd_degree}) till den ekvivalenta ekvationen $(a-1)(-a^{2} + 8a - 5) = 0$ och vi finner de två resterande lösningarna $a = 3$ och $a = 5$.
+\\
+\\
+Nu har vi alltså visat att $\det A = 0$ om och endast om $a = 1$, $a = 3$ eller $a = 5$, vilket är ett ekvivalent påstående med att $AX = B$ har oöndligt många, eller inga lösningar för var och ett av dessa värden på $a$. Försöket alla andra värden på $a$ gäller därav en unik lösning till $AX = B$.
+\\
+\\
+Nu återstår att bestämma antalet lösningar för $a = 1$, $a = 3$ och $a = 5$.
+\\
+\\
+\textbf{Fallet $a = 1$:}
+\\
+\\
+Vi låter $a = 1$ och betraktar (\ref{*})
+
+\begin{gather}
+  \text{(\ref{*})} \quad \stackrel{a = 1}{\iff} \quad
+  \systeme{
+  3x_{1} + 2x_{2} - x_{3} = 1,
+  -2x_{1} + 2x_{3} = -2,
+  -x_{1} + 2x_{2} + 3x_{3} = 1 \text{.}
+  } \label{a=1}
+\end{gather}
+\\
+Den första och sista ekvationen i (\ref{a=1}) har samma högerled och vi kan då skriva om dom till denna ekvivalenta ekvation:
+
+\begin{align*}
+  \quad & 3_{x1} + 2x_{2} - x_{3} = -x_{1} + 2x_{2} + 3x_{3} \\
+  \iff \quad & 3x_{1} - x_{3} = -x_{1} + 3x_{3} \\
+  \iff \quad & 4x_{1} = 4x_{3} \\
+  \iff \quad & x_{1} = x_{3}
+\end{align*}
+\\
+Den mittersta ekvationen i (\ref{a=1}) är ekvivalent med $x_{1} = x_{3} + 1$. Vi har nu ett nytt ekvationssystem som är ekvivalent med (\ref{a=1}):
+
+\begin{gather*}
+  (\ref{a=1}) \quad \iff \quad
+  \systeme{
+  x_{1} = x_{3},
+  x_{1} = x_{3} + 1
+  }
+\end{gather*}
+\\
+vilket inte har några lösningar. Alltså har vi visat att (\ref{*}) saknar lösningar då $a = 1$.
+
+\end{document}
