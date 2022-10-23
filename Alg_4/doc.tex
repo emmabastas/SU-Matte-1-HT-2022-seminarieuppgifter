@@ -5,12 +5,14 @@
 \usepackage{mathtools}
 \usepackage{systeme}
 \usepackage{lipsum}
+\usepackage{gauss}
 
 \renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\renewcommand{\rowmultlabel}[1]{\cdot \; #1}
 
-\title{Seminarieuppgift 6 - Lösningar till ekvationssystem}
+\title{Algebrauppgift 4 - Ekvationssystem}
 \author{Emma Bastås}
-\date{Oktober 9, 2022}
+\date{Oktober 23, 2022}
 
 \begin{document}
 
@@ -29,9 +31,9 @@
 Först noterar vi att alla tre ekvationer är linjära, och vi kan därför skriva om ekvationssystem till denna ekvivalenta matrisekvation:
 
 \begin{gather*}
-  \text{(\ref{*})} \iff AX = B\text{.}
+  \text{(\ref{*})} \iff AX = B
 \end{gather*}
-
+\\
 där:
 \begin{gather*}
   A =
@@ -64,7 +66,7 @@ För linjära matrisekvationer på denna form finns precis tre möjligheter avse
 \noindent Att determinanten till $A$ är skiljd från noll är ekvivalent med att $A$ har en invers, vilket i sin tur är ekvivalent med att $AX = B$ har precis en lösning (nämligen $X = A^{-1}B$). Är determinanten noll så gäller då antingen att ingen eller oändligt många lösningar till $AX = B$ finns.
 \\
 \\
-Vi finner nu de värden på $a$ för vilket $\det A = 0$. Här använder vi oss helt enkelt av den otympliga identiteten $det A = a_{11} a_{22} a_{33} + a_{12} a_{23} a_{31} + a_{13} a_{21} a_{32} - a_{11} a_{23} a_{32} - a_{12} a_{21} a_{33} - a_{13} a_{22} a_{31} $. Men det går lika bra att använda annan en metod, t.ex Sarrus regel eller cofaktorexpansion.
+Vi finner nu de värden på $a$ för vilket $\det A = 0$. Här använder vi oss helt enkelt av den otympliga formeln för determinanter för $3\times3$ matriser, $\det (a_{ij}) = a_{11} a_{22} a_{33} + a_{12} a_{23} a_{31} + a_{13} a_{21} a_{32} - a_{11} a_{23} a_{32} - a_{12} a_{21} a_{33} - a_{13} a_{22} a_{31} $:\footnote{Sarrus regel eller cofaktorexpansion går såklart lika bra.}
 
 \begin{align}
   &\det A = 0\nonumber\\
@@ -72,49 +74,114 @@ Vi finner nu de värden på $a$ för vilket $\det A = 0$. Här använder vi oss 
   &- (4 - a)\cdot2\cdot2 - 2\cdot(-2)\cdot(4 - a) - (-1)\cdot(1 - a)\cdot(-1) = 0\nonumber\\
   \iff \quad &-a^{3} + 9a^{2} -23a +15 = 0\text{.} \label{3rd_degree}
 \end{align}
-
-Att lösa tredjegradsekvationer ligger utanför denna seminariekurs, men rationella rotsatsen ger oss att alla lösningarna till (\ref{3rd_degree}) är något av talen $\pm1, \cdots, \pm 15$. 30 potentiella lösningar är tillräckligt få för att det ska vara görbart att testa var och en av dom. Vi gör detta och finner en lösning redan vid första försöket! $a = 1$. Nu kan vi medelst faktorssatsen och polynomdivision skriva om till (\ref{3rd_degree}) till den ekvivalenta ekvationen $(a-1)(-a^{2} + 8a - 5) = 0$ och vi finner de två resterande lösningarna $a = 3$ och $a = 5$.
+\\
+Vi finner att $\det A = 0$ är en ekvivalent ekvation till (\ref{3rd_degree}). Att lösa tredjegradsekvationer i det generella fallet ligger utanför ramen för denna kurs, men vi har tur (eller snarare ett tillrättalagt problem) och kan med hjälp av Rationella rotsatsen, faktorsatsen och polynomdivision lösa ekvationen.\footnote{Se kapitell 9 och 10 i algebrkompendiumet för en redogörelse för hur detta görs.}
 \\
 \\
-Nu har vi alltså visat att $\det A = 0$ om och endast om $a = 1$, $a = 3$ eller $a = 5$, vilket är ett ekvivalent påstående med att $AX = B$ har oöndligt många, eller inga lösningar för var och ett av dessa värden på $a$. Försöket alla andra värden på $a$ gäller därav en unik lösning till $AX = B$.
+Vi finner att lösningarna till $\det A = 0$ är $a = 1$, $a = 3$ och $a = 5$. Detta är ekvivalent med att $AX = B$ har oändligt många, eller inga lösningar för var och ett av dessa värden på $a$. För alla andra värden på $a$ gäller därav en unik lösning till ekvationen.
 \\
 \\
 Nu återstår att bestämma antalet lösningar för $a = 1$, $a = 3$ och $a = 5$.
 \\
 \\
+För dessa tre fall finns alltså precis två alternativ: Inga eller oändligt många lösningar. $AX = B$ har oändligt många lösningar om och endast om det finns en $3 \times 3$ matris $M$ så att:
+
+\begin{gather*}
+  MAX = B \\
+  \iff
+  \begin{pmatrix}
+    i & j & k
+  \end{pmatrix}
+  X =
+  \begin{pmatrix}
+  \begin{pmatrix}
+\end{gather*}
+\\
+\\
 \textbf{Fallet $a = 1$:}
 \\
 \\
-Vi låter $a = 1$ och betraktar (\ref{*})
+Vi låter $a = 1$, ställer upp ekvationen $AX = B$ för Gauss-Jordan eliminering och utför 2 operationer:
+
+\begin{equation*}
+  \begin{gmatrix}[p]
+    3 & 2 & -1 & \bigm| & 1 \\
+    -2 & 0 & 2 & \bigm| & -2 \\
+    -1 & 2 & 3 & \bigm| & 1
+    \rowops
+      \add[-1]{0}{2}
+      \add[-2]{1}{2}
+  \end{gmatrix}
+  \rightarrow
+  \begin{pmatrix}
+    3 & 2 & -1 & \bigm| & 1 \\
+    -2 & 0 & 2 & \bigm| & -2 \\
+    0 & 0 & 0 & \bigm| & 4
+  \end{pmatrix}\text{.}
+\end{equation*}
+\\
+Skrivsättet här är bara lite smidig notation, det som egentligen sker är följande:
 
 \begin{gather}
-  \text{(\ref{*})} \quad \stackrel{a = 1}{\iff} \quad
-  \systeme{
-  3x_{1} + 2x_{2} - x_{3} = 1,
-  -2x_{1} + 2x_{3} = -2,
-  -x_{1} + 2x_{2} + 3x_{3} = 1 \text{.}
-  } \label{a=1}
+  AX = B \nonumber \\[2pt]
+  \iff \quad
+               \begin{pmatrix}
+                 1 & & \\
+                 & 1 & \\
+                 & -2 & 1
+               \end{pmatrix}
+               \begin{pmatrix}
+                 1 & & \\
+                 & 1 & \\
+                 -1 & & 1
+               \end{pmatrix}
+               AX =
+                              \begin{pmatrix}
+                 1 & & \\
+                 & 1 & \\
+                 -1 & & 1
+               \end{pmatrix}
+               \begin{pmatrix}
+                 1 & & \\
+                 & 1 & \\
+                 & -2 & 1
+               \end{pmatrix}
+               B \nonumber \\[4pt]
+  \iff \quad
+               \begin{pmatrix}
+                 3 & 2 & -1 \\
+                 -2 & 0 & 2 \\
+                 0 & 0 & 0
+               \end{pmatrix}
+               X =
+               \begin{pmatrix}
+                 1 \\ -2 \\ 4
+               \end{pmatrix}
+               \label{a=1}
 \end{gather}
 \\
-Den första och sista ekvationen i (\ref{a=1}) har samma högerled och vi kan då skriva om dom till denna ekvivalenta ekvation:
-
-\begin{align*}
-  \quad & 3_{x1} + 2x_{2} - x_{3} = -x_{1} + 2x_{2} + 3x_{3} \\
-  \iff \quad & 3x_{1} - x_{3} = -x_{1} + 3x_{3} \\
-  \iff \quad & 4x_{1} = 4x_{3} \\
-  \iff \quad & x_{1} = x_{3}
-\end{align*}
-\\
-Den mittersta ekvationen i (\ref{a=1}) är ekvivalent med $x_{1} = x_{3} + 1$. Vi har nu ett nytt ekvationssystem som är ekvivalent med (\ref{a=1}):
+Detta är ekvivalent med ekvatoinssystemet:
 
 \begin{gather*}
-  (\ref{a=1}) \quad \iff \quad
-  \systeme{
-  x_{1} = x_{3},
-  x_{1} = x_{3} + 1
-  }
+  \begin{cases}
+    \cdots = 1 \\
+    \cdots = -2 \\
+    0x_{0} + 0x_{1} + 0x_{2} = 4
+  \end{cases}
 \end{gather*}
 \\
-vilket inte har några lösningar. Alltså har vi visat att (\ref{*}) saknar lösningar då $a = 1$.
+och det är uppenbar att detta saknar lösningar. Alltså saknar den ekvivalenta ekvationen $AX = B$ lösningar för $a = 1$.
+\\
+\\
+\textbf{Fallet a = 3:}
+\\
+\\
+Vi låter $a = 3$ och betraktar $AX = B$:
+
+\begin{gather*}
+  \begin{pmatrix}
+    1 &
+  \end{pmatrix}
+\end{gather*}
 
 \end{document}
