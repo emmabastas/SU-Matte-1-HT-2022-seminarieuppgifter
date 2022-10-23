@@ -1,0 +1,63 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{systeme}
+\usepackage{lipsum}
+
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+\title{Algebrauppgift 5  - Rekursiv talföljd}
+\author{Emma Bastås}
+\date{Oktober 23}
+
+\begin{document}
+
+\maketitle
+
+
+\thispagestyle{empty}
+
+\noindent Uppgiften är att med induktion finna en icke-rekursiv formel till följande talföljd:
+
+\begin{gather*}
+  a_{1} = 1, \quad
+  a_{2} = 3 \\
+  a_{n+1} = 2a_{n} - a_{n-1} \; n \geq 2\text{.}
+\end{gather*}
+\\
+Vi börjar med att beräkna $a_{n}$ för ett litet antal värden på $n$ i hoppet om att finna ett mönster:
+
+\begin{align*}
+  a_{3} = 2a_{2} - a_{1} = 2\cdot3 - 1 &= 5 \\
+  a_{4} = 2a_{3} - a_{2} = 2\cdot5 - 3 &= 7 \\
+  a_{5} = 2a_{4} - a_{3} = 2\cdot7 - 5 &= 9\text{.}
+\end{align*}
+\\
+Vi ser ett mönster! För $n \leq 5$ beskrivs talföljden $a_{n}$ av formeln:
+
+\begin{gather*}
+  a_{n} = 2n - 1 \tag{$\star$}\label{*} \\[10pt]
+  a_{1} = 2\cdot1 - 1 = 1\\[-6pt]
+  \vdots \\[-2pt]
+  a_{5} = 2\cdot5 - 1 = 9\text{.}
+\end{gather*}
+\\
+Kanske gäller (\ref{*}) även för $n > 5$, kanske inte.. Antag nu att (\ref{*}) gäller för något $n$ och $n-1$. Då gäller (\ref{*}) även för $n+1$, ty:
+
+\begin{align*}
+  a_{n+1} &= 2a_{n} - a_{n - 1} \\
+          &= 2(2n - 1) \;-\; (2(n - 1) - 1) \\
+          &= 4n - 2 \;-\; 2n + 2 + 1 \\
+          &= 2n + 1 \\
+  &= 2(n+1) - 1\text{.}
+\end{align*}
+\\
+Vi har alltså visat att (\ref{*}) gäller för b.la. $n = 1$ och $n = 2$, samt att om (\ref{*}) gäller för något $n$ och $n-1$ så gäller (\ref{*}) även för $n+1$. Enligt induktionsprincipen gäller då (\ref{*}) för alla $n$.
+\\[8pt]
+\centerline{$\qed$}
+
+\thispagestyle{empty}
+
+\end{document}
