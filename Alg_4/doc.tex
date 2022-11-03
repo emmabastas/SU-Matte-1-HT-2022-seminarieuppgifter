@@ -7,12 +7,11 @@
 \usepackage{lipsum}
 \usepackage{gauss}
 
-\renewcommand{\thefootnote}{\fnsymbol{footnote}}
 \renewcommand{\rowmultlabel}[1]{\cdot \; #1}
 
-\title{Algebrauppgift 4 - Ekvationssystem}
+\title{Algebrauppgift 4 version 2 - Ekvationssystem}
 \author{Emma Bastås}
-\date{Oktober 23, 2022}
+\date{Oktober 30, 2022}
 
 \begin{document}
 
@@ -28,7 +27,7 @@
   \end{cases}\text{.} \tag{$\star$}\label{*}
 \end{gather*}
 \\
-Först noterar vi att alla tre ekvationer är linjära, och vi kan därför skriva om ekvationssystem till denna ekvivalenta matrisekvation:
+Först noterar vi att alla tre ekvationer är linjära, och att vi därför kan skriva om ekvationssystem till denna ekvivalenta matrisekvation:
 
 \begin{gather*}
   \text{(\ref{*})} \iff AX = B
@@ -60,7 +59,7 @@ För linjära matrisekvationer på denna form finns precis tre möjligheter avse
 \begin{itemize}
   \item Det finns ingen lösning.
   \item Det finns precis en lösning.
-  \item Det finns oöndligt månda lösningar.
+  \item Det finns oändligt många lösningar.
 \end{itemize}
 
 \noindent Att determinanten till $A$ är skiljd från noll är ekvivalent med att $A$ har en invers, vilket i sin tur är ekvivalent med att $AX = B$ har precis en lösning (nämligen $X = A^{-1}B$). Är determinanten noll så gäller då antingen att ingen eller oändligt många lösningar till $AX = B$ finns.
@@ -75,7 +74,7 @@ Vi finner nu de värden på $a$ för vilket $\det A = 0$. Här använder vi oss 
   \iff \quad &-a^{3} + 9a^{2} -23a +15 = 0\text{.} \label{3rd_degree}
 \end{align}
 \\
-Vi finner att $\det A = 0$ är en ekvivalent ekvation till (\ref{3rd_degree}). Att lösa tredjegradsekvationer i det generella fallet ligger utanför ramen för denna kurs, men vi har tur (eller snarare ett tillrättalagt problem) och kan med hjälp av Rationella rotsatsen, faktorsatsen och polynomdivision lösa ekvationen.\footnote{Se kapitell 9 och 10 i algebrkompendiumet för en redogörelse för hur detta görs.}
+Vi finner att $\det A = 0$ är en ekvivalent ekvation till (\ref{3rd_degree}). Att lösa tredjegradsekvationer i det generella fallet ligger utanför ramen för denna kurs, men vi har tur (eller snarare ett tillrättalagt problem) och kan med hjälp av Rationella rotsatsen, faktorsatsen och polynomdivision lösa ekvationen.\footnote{Se kapitel 9 och 10 i algebrkompendiumet för en redogörelse för hur detta görs.}
 \\
 \\
 Vi finner att lösningarna till $\det A = 0$ är $a = 1$, $a = 3$ och $a = 5$. Detta är ekvivalent med att $AX = B$ har oändligt många, eller inga lösningar för var och ett av dessa värden på $a$. För alla andra värden på $a$ gäller därav en unik lösning till ekvationen.
@@ -84,24 +83,10 @@ Vi finner att lösningarna till $\det A = 0$ är $a = 1$, $a = 3$ och $a = 5$. D
 Nu återstår att bestämma antalet lösningar för $a = 1$, $a = 3$ och $a = 5$.
 \\
 \\
-För dessa tre fall finns alltså precis två alternativ: Inga eller oändligt många lösningar. $AX = B$ har oändligt många lösningar om och endast om det finns en $3 \times 3$ matris $M$ så att:
-
-\begin{gather*}
-  MAX = B \\
-  \iff
-  \begin{pmatrix}
-    i & j & k
-  \end{pmatrix}
-  X =
-  \begin{pmatrix}
-  \begin{pmatrix}
-\end{gather*}
-\\
-\\
 \textbf{Fallet $a = 1$:}
 \\
 \\
-Vi låter $a = 1$, ställer upp ekvationen $AX = B$ för Gauss-Jordan eliminering och utför 2 operationer:
+Vi låter $a = 1$, ställer upp ekvationen $AX = B$ för Gauss-Jordan eliminering och utför två operationer:
 
 \begin{equation*}
   \begin{gmatrix}[p]
@@ -122,48 +107,38 @@ Vi låter $a = 1$, ställer upp ekvationen $AX = B$ för Gauss-Jordan eliminerin
 \\
 Skrivsättet här är bara lite smidig notation, det som egentligen sker är följande:
 
-\begin{gather}
-  AX = B \nonumber \\[2pt]
-  \iff \quad
+\begin{align}
+  && AX &= B \nonumber \\[2pt]
+  \iff &&
                \begin{pmatrix}
                  1 & & \\
                  & 1 & \\
-                 & -2 & 1
+                 -1 & -2 & 1
                \end{pmatrix}
+               AX &=
                \begin{pmatrix}
                  1 & & \\
                  & 1 & \\
-                 -1 & & 1
-               \end{pmatrix}
-               AX =
-                              \begin{pmatrix}
-                 1 & & \\
-                 & 1 & \\
-                 -1 & & 1
-               \end{pmatrix}
-               \begin{pmatrix}
-                 1 & & \\
-                 & 1 & \\
-                 & -2 & 1
+                 -1 & -2 & 1
                \end{pmatrix}
                B \nonumber \\[4pt]
-  \iff \quad
+  \iff &&
                \begin{pmatrix}
                  3 & 2 & -1 \\
                  -2 & 0 & 2 \\
                  0 & 0 & 0
                \end{pmatrix}
-               X =
+               X &=
                \begin{pmatrix}
                  1 \\ -2 \\ 4
                \end{pmatrix}
                \label{a=1}
-\end{gather}
+\end{align}
 \\
 Detta är ekvivalent med ekvatoinssystemet:
 
 \begin{gather*}
-  \begin{cases}
+  \text{(\ref{a=1})} \iff \begin{cases}
     \cdots = 1 \\
     \cdots = -2 \\
     0x_{0} + 0x_{1} + 0x_{2} = 4
@@ -176,12 +151,68 @@ och det är uppenbar att detta saknar lösningar. Alltså saknar den ekvivalenta
 \textbf{Fallet a = 3:}
 \\
 \\
-Vi låter $a = 3$ och betraktar $AX = B$:
+Vi låter $a = 3$, ställer upp ekvationen $AX = B$ för Gauss-Jordan eliminering och utför tre operation:
+
+\begin{equation*}
+  \begin{gmatrix}[p]
+    1 & 2 & -1 & \bigm| & 1 \\
+    -2 & -2 & 2 & \bigm| & -2 \\
+    -1 & 2 & 1 & \bigm| & 1
+    \rowops
+      \add[-2]{2}{1}
+      \add[1]{2}{0}
+      \add[1]{1}{0}
+  \end{gmatrix}
+  \rightarrow
+  \begin{pmatrix}
+    0 & 0 & 0 & \bigm| & -2 \\
+    0 & -4 & 0 & \bigm| & -4 \\
+    -1 & 2 & 1 & \bigm| & 1
+  \end{pmatrix}\text{.}
+\end{equation*}
+\\
+Precis som i fallet med $a = 1$ är detta ekvivalent med ett ekvationssystem utan lösning, alltså saknar $AX = B$ lösning för $a = 3$.
+\\
+\\
+\textbf{Fallet a = 5:}
+\\
+\\
+Vi låter $a = 5$, ställer upp ekvationen $AX = B$ för Gauss-Jordan eliminering och utför tre operationer:
+
+\begin{equation*}
+  \begin{gmatrix}[p]
+    -1 & 2 & -1 & \bigm| & 1 \\
+    -2 & -4 & 2 & \bigm| & -2 \\
+    -1 & 2 & -1 & \bigm| & 1
+    \rowops
+      \add[-1]{2}{0}
+      \add[2]{2}{1}
+      \add[\tfrac{-1}{4}]{1}{2}
+  \end{gmatrix}
+  \rightarrow
+  \begin{pmatrix}
+    0 & 0 & 0 & \bigm| & 0 \\
+    -4 & 0 & 0 & \bigm| & 0 \\
+    0 & 2 & -1 & \bigm| & 1
+  \end{pmatrix}\text{.}
+\end{equation*}
+\\
+Detta är ekvivalent med ekvationssystemet:
 
 \begin{gather*}
-  \begin{pmatrix}
-    1 &
-  \end{pmatrix}
+  \begin{cases}
+    -4x_{0} = 0 \\
+    2x_{1} - x_{3} = 1
+  \end{cases}
 \end{gather*}
+\\
+vilket har oändligt många lösningar, alltså har $AX = B$ oändligt många lösningar för $a = 5$.
+\\
+\\
+Vi har nu visat att ekvationssystemet (\ref{*}) som är ekvivalent med $AX = B$ saknar lösningar om och endast om $a = 1$ eller $a = 3$ och har oändligt många lösningar om och endast om $a = 5$. För alla andra reella värden på $a$ har (\ref{*}) entydiga lösningar.
+\\
+\centerline{$\qed$}
+
+
 
 \end{document}
