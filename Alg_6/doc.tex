@@ -23,14 +23,14 @@
 \maketitle
 
 
-\noindent Betrakta en regelbunden sexhörning med hörn i punkterna $A$, $B$, $C$, $D$, $E$ och $F$ (i ordning motsols). Vektorerna $\ee = \overline{AB}$ och $\eee = \overline{AD}$ utgör en bas för planet liksom vektorerna $\ff = \overline{AC}$ och $\fff = \overline{AE}$. Det finns två uppgifter
+\noindent Betrakta en regelbunden sexhörning med hörn i punkterna $A$, $B$, $C$, $D$, $E$ och $F$ (i ordning motsols). Vektorerna $\ee = \overline{AB}$ och $\eee = \overline{AD}$ utgör en bas för planet liksom vektorerna $\ff = \overline{AC}$ och $\fff = \overline{AE}$. Det finns två uppgifter:
 
 \begin{enumerate}
-        \item[a)] Vektorn $\overline{u}_{1}$ har kordinaterna $(5, -2)$ i basen $\ee, \eee$. Bestämm $\overline{u}_{2}$:s koordinater på avseende på basen $\ff, \fff$.
+        \item[a)] Vektorn $\overline{u}_{1}$ har kordinaterna $(5, -2)$ i basen $\ee, \eee$. Bestämm $\uu$:s koordinater på avseende på basen $\ff, \fff$.
         \item[b)] Vektorn $\overline{u}_{2}$ har kordinaterna $(1, 6)$ i basen $\ff, \fff$. Bestämm $\overline{u}_{2}$:s koordinater på avseende på basen $\ee, \eee$.
 \end{enumerate}
 
-\noindent Vi börjar med att tolka detta geometriskt, en regelbunden hexagon består av sex liksidiga trianglar:
+\noindent Vi tolkar detta geometriskt, en regelbunden hexagon kan konstrueras med sex liksidiga trianglar:
 
 \begin{center}
 \begin{tikzpicture}[scale = 3]
@@ -47,9 +47,9 @@
   \draw (A)--(O)--(D);
   \draw (B)--(O)--(E);
 
-  \draw[->, very thick, dashed] (A)--(B) node[midway, above] {$\ee$};
-  \draw[->, very thick, dashed] (A)--(C) node[midway, above] {$\ff$};
-  \draw[->, very thick, dashed] (A)--(D) node[midway, above left] {$\eee$};
+  \draw[->, very thick, dashed] (A)--(B) node[pos=0.4, above] {$\ee$};
+  \draw[->, very thick, dashed] (A)--(C) node[pos=0.4, above] {$\ff$};
+  \draw[->, very thick, dashed] (A)--(D) node[pos=0.4, above left] {$\eee$};
   \draw[->, very thick, dashed] (A)--(E) node[midway, above left] {$\fff$};
 
   \tkzMarkSegment (F,A);
@@ -128,7 +128,7 @@ Vi ställer upp $\uuu$ som en linjärkombination av $\ff$ och $\fff$:
 Uppgift a)
 \\
 \\
-Vi skriver om ekvationerna i (\ref{*}) så att $\ee$ och $\eee$ är linjärkombnationer av $\ff$ och $\fff$:
+Vi skriver om ekvationerna i (\ref{*}) så att $\ee$ och $\eee$ är linjärkombinationer av $\ff$ och $\fff$:
 
 \begin{gather}
   \text{(\ref{*})} \quad \iff \quad
