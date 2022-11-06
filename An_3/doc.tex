@@ -5,8 +5,9 @@
 \usepackage{amssymb}
 \usepackage{mathtools}
 \usepackage{enumerate}
-\usepackage{mdframed}
 \usepackage{lipsum}
+\usepackage{multicol}
+\usepackage{graphicx}
 
 \renewcommand{\thefootnote}{\fnsymbol{footnote}}
 
@@ -189,5 +190,32 @@ Vi ser nu att $x = -\sqrt{2} - 1$ är ett lokalt strikt maximum och att $x = \sq
 \section*{Kurvritning}
 
 Genom att kompletera den tigidare tabellen med ett par uträknade punkter $(x, f(x))$ på kurvan så kan vi skissa upp ett approximerat utseende:
+\\
+\\
+\begin{tabular}[c]{l | c | c | c | c | c | c | c | c | c}
+  $x$     &   & $-\sqrt{2} - 1$ &     & $-1$ &     & $\sqrt{2} - 1$ &     & 1    &     \\ \hline
+  $f'(x)$ & + & $0$             & $-$ & odef & $-$ & $0$            & $+$ & odef & $+$ \\
+  $f(x)$  &   & $-\tfrac{8}{\sqrt{2}} - 5$ &&&     & $\tfrac{8}{\sqrt{2}} - 5$ &&&
+\end{tabular}
+\\
+\\
+Vi får inte heller blanda ihop de sneda asymptoterna, när kurvan går mot $-\infty$ närmar den sig asymptoten $y = 2x - 3$ och när kurvan går mot $+\infty$ närmar den sig asymptoten $y = 2x - 1$.l
+
+\newpage
+
+\noindent Vi approximerar även en del värden som förekommer i tabellen till trevliga bråk:
+
+\begin{gather*}
+  \sqrt{2} = \frac{2\sqrt{2}}{2} = \frac{\sqrt{8}}{2} \approx \frac{\sqrt{9}}{2} = \frac{3}{2} \implies\\
+  -\sqrt{2} - 1 \approx -\frac{5}{2} \quad \text{och} \quad \sqrt{2} - 1 \approx \frac{1}{2}
+\end{gather*}\begin{gather*}
+  \frac{8}{\sqrt{2}} = \frac{\sqrt{64}}{\sqrt{2}} = \sqrt{32} \approx \sqrt{36} = 6 \implies\\
+  -\frac{8}{\sqrt{2}} - 5 \approx -11 \quad \text{och} \quad \frac{8}{\sqrt{2}} - 5 \approx 1\text{.}
+\end{gather*}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=10cm, angle=270]{skiss.jpg}
+\end{figure}
 
 \end{document}
