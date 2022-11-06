@@ -13,7 +13,7 @@
 
 \title{Analysuppgift 3 - Analys av kurva}
 \author{Emma Bastås}
-\date{Oktober 30, 2022}
+\date{November 6, 2022}
 
 \begin{document}
 
@@ -25,7 +25,7 @@
   f(x) = \frac{|x-1| + 2x^{2}}{x + 1}
 \end{gather*}
 \\
-bestämma lokala och globala extermpunkter och asymptoter samt rita grafen.
+bestämma lokala och globala extrempunkter och asymptoter samt rita grafen.
 \\
 \\
 Vi börjar med att att falluppdela $f(x)$ och därefter förenkla uttrycken med polynomdivision:
@@ -50,15 +50,15 @@ Vi börjar med att att falluppdela $f(x)$ och därefter förenkla uttrycken med 
 
 \subsection*{Asymptoter}
 
-Det finns tre type av asymptoter att söka efter:
+Det finns tre typer av asymptoter att söka efter:
 
 \begin{itemize}
         \item \textbf{Vertikal asymptot}. Linjen $x = a$ är en vertikal asymptot till $y = f(x)$ om $\lim_{x \to a}f(x) = \pm\infty$.
-        \item \textbf{Horisontell asymptot}. Linjen $y = a$ är en horisontel asymptot till $y = f(x)$ om $\lim_{x \to \pm\infty}f(x) = a$.
+        \item \textbf{Horisontell asymptot}. Linjen $y = a$ är en horisontell asymptot till $y = f(x)$ om $\lim_{x \to \pm\infty}f(x) = a$.
         \item \textbf{Sned asymptot}. Linjen $y = kx + m$ där $k \neq 0$ är en sned asymptot till $y = f(x)$ om $\lim_{x \to \pm\infty}[f(x) - (kx +m)] = 0$.
 \end{itemize}
 
-\noindent Det finns en punkt då $f(x)$ går mot oöndligheten, och den ligger i $x = -1$. Detta är den enda vertikala asymptoten till $y = f(x)$.
+\noindent Det finns en punkt då $f(x)$ går mot oändligheten, och den ligger i $x = -1$. Detta är den enda vertikala asymptoten till $y = f(x)$.
 \\
 \\
 Vi testar om $f(x)$ har en horisontell asymptot då $x$ går mot $+\infty$:
@@ -83,7 +83,7 @@ Vi ser att linjen $y = 2x - 1$ är en sned asymptot till $y = f(x)$. På liknand
 Nu har vi funnit samtliga asymptoter till $y = f(x)$: $x = -1$, $y = 2x -1$ och $y = 2x - 3$.
 
 
-\subsection*{Extermpunkter}
+\subsection*{Extrempunkter}
 
 \noindent Vi bestämmer derivatan $f'(x)$ till $f(x)$ genom att derivera fallen separat:
 
@@ -97,18 +97,18 @@ Nu har vi funnit samtliga asymptoter till $y = f(x)$: $x = -1$, $y = 2x -1$ och 
   \end{cases}\text{.}
 \end{gather*}
 \\
-Notera att $f(x)$ inte är deriverbar i punkten $x = 1$, går vi tillbaka till derivatans definition finner vi att vi får två olika derivator beroende på från vilket håll vi närmar oss $x = 1$.
+Notera att $f(x)$ inte är deriverbar i punkten $x = 1$. Går vi tillbaka till derivatans definition finner vi att vi får två olika derivator beroende på från vilket håll vi närmar oss $x = 1$, en egenskap som gör derivatan odefinierad i den punkten.
 \\
 \\
-Att en punkt $x_{0}$ är ett extremvärde till en funktion $f(x)$ medför alltid ett av tre påståenden:
+Att en punkt $x_{0}$ är ett extremvärde till en funktion $f(x)$ medför alltid att ett av tre påståenden är sant:
 
 \begin{enumerate}[i)]
-        \item $x_{0}$ är en ändpunkt till definitionsintervalet till $f(x)$.
+        \item $x_{0}$ är en ändpunkt i definitionsintervallet till $f(x)$.
         \item $f(x)$ är diskontinuerlig i $x_{0}$.
         \item $f(x)$ är deriverbar i $x_{0}$ och $f'(x_{0}) = 0$.
 \end{enumerate}
 
-\noindent I vårat fall är $f(x)$ definierad i intervallen $x < -1$ och $x > -1$. Således kan alldrig det första påståendet vara sant. Vi vet också att $f(x)$ är kontnuerlig i hela sin definitionsmängd, såledess kan alldrig det andra påståendet vara sant. Det lämnar oss med det sista påståendet, alla extermpunkter till $f(x)$ är nollställen till $f'(x)$.
+\noindent I vårt fall är $f(x)$ definierad i intervallen $x < -1$ och $x > -1$. Således kan aldrig det första påståendet vara sant. Vi vet också att $f(x)$ är kontinuerlig i hela sin definitionsmängd, således kan aldrig det andra påståendet vara sant. Det lämnar oss med det sista påståendet, alla extrempunkter till $f(x)$ är nollställen till $f'(x)$.
 \\
 \\
 Vi finner dessa nollställen. För $x > 1$ är $f'(x) = 2$ och detta saknar nollställen, för fallet $x < 1$ ställer vi upp och löser ekvationen:
@@ -122,7 +122,7 @@ Vi finner dessa nollställen. För $x > 1$ är $f'(x) = 2$ och detta saknar noll
   \iff \quad & x = -1 \pm \sqrt{2}\text{.}
 \end{align*}
 \\
-Vi finner även de intervall för vilket $f'(x) < 0$, detta är nödvändigt för att senare avgöra om nollställena är max- eller minmumpunkter eller terrsasspunkter.
+Vi finner även de intervall för vilket $f'(x) < 0$, detta är nödvändigt för att senare avgöra om nollställena är max- eller minimipunkter eller terrasspunkter.
 
 \begin{align}
   & f'(x) < 0 \notag \\
@@ -141,14 +141,14 @@ Det första fallet är alltid falskt och kan därför förkastas:
   \text{(\ref{fp_cases})} \quad \iff \quad & 2 - \frac{4}{(x+1)^{2}} < 0 \quad \text{och} \quad x < 1\text{.} \label{fp_nocase}
 \end{align}
 \\
-Nämnaren $(x + 1)^{2}$ är strikt större än noll för alla värden på $x$ i definitionsmängden till $f'(x)$ och vi kan därför multiplicera båda led i olikheten med nämnaren:
+Nämnaren $(x + 1)^{2}$ är strikt större än noll för alla värden av $x$ i definitionsmängden till $f'(x)$ och vi kan därför multiplicera båda led i olikheten med nämnaren:
 
 \begin{align}
   \text{(\ref{fp_nocase})} \quad \iff \quad & 2(x + 1)^{2} - 4 < 0 & \text{och} \quad x < 1 \notag \\
   \iff \quad & (x + 1)^{2} < 2 & \text{och} \quad x < 1\text{.} \label{fp_square}
 \end{align}
 \\
-Nu drar vi kvadratroten ur båda led och det är här viktigt att komma ihåg att $\sqrt{a^{2}} \neq a$! Istället är det $\sqrt{a^{2}} = |a|$ som är den korrekta identitet.
+Nu drar vi kvadratroten ur båda led och det är här viktigt att komma ihåg att $\sqrt{a^{2}} \neq a\,$! Istället är det $\sqrt{a^{2}} = |a|$ som är den korrekta identitet.
 
 \begin{align*}
   \text{(\ref{fp_square})} \quad \iff \quad & |x + 1| < \sqrt{2} & \text{och} \quad x < 1 \\
@@ -167,7 +167,7 @@ Nu drar vi kvadratroten ur båda led och det är här viktigt att komma ihåg at
               \end{aligned}
 \end{align*}
 \\
-Nu vet vi för vilka värden på $x$ som $f'(x)$ är både noll och strikt mindre än noll, och därav vet vi också för vilka $x$ som $f'(x)$ är strikt större än noll, nämligen:
+Nu vet vi både för vilka värden av $x$ som $f'(x)$ är noll och strikt mindre än noll, och därav vet vi också för vilka $x$ som $f'(x)$ är strikt större än noll, nämligen:
 
 \begin{alignat*}{2}
   & x < -1 - \sqrt{2} &&\quad\text{eller}\\
@@ -185,11 +185,11 @@ Med denna information kan vi besvara frågan om extrempunkter, för att göra de
 \\
 \\
 \\
-Vi ser nu att $x = -\sqrt{2} - 1$ är ett lokalt strikt maximum och att $x = \sqrt{2} - 1$ är ett lokalt strikt minimum. Från avsnitt \textbf{Asymptoter} konstaterade vi att att $y = f(x)$ inte har några horisontella asymptoter, och därav är obegränsad. Vi ser från tabellen att $y = f(x)$ då är både uppåt och nedåt obegrensad så de två extrempunkter vi funnit är inte globala extrempunkter.
+Vi ser nu att $x = -\sqrt{2} - 1$ är ett lokalt strikt maximum och att $x = \sqrt{2} - 1$ är ett lokalt strikt minimum. Det finns inga andra extrempunkter utöver dessa. Från avsnittet \textbf{Asymptoter} konstaterade vi att att $y = f(x)$ inte har några horisontella asymptoter, och därav är obegränsad. Vi ser från tabellen att $f(x)$ då är både uppåt och nedåt obegränsad så de två extrempunkter vi funnit är inte globala extrempunkter.
 
-\section*{Kurvritning}
+\section*{Grafritning}
 
-Genom att kompletera den tigidare tabellen med ett par uträknade punkter $(x, f(x))$ på kurvan så kan vi skissa upp ett approximerat utseende:
+Genom att komplettera den tidigare tabellen med ett par beräknade punkter $(x, f(x))$ på kurvan så kan vi skissa upp ett approximerat utseende:
 \\
 \\
 \begin{tabular}[c]{l | c | c | c | c | c | c | c | c | c}
@@ -199,7 +199,7 @@ Genom att kompletera den tigidare tabellen med ett par uträknade punkter $(x, f
 \end{tabular}
 \\
 \\
-Vi får inte heller blanda ihop de sneda asymptoterna, när kurvan går mot $-\infty$ närmar den sig asymptoten $y = 2x - 3$ och när kurvan går mot $+\infty$ närmar den sig asymptoten $y = 2x - 1$.l
+Det är viktigt att inte blanda ihop de sneda asymptoterna. När kurvan går mot $-\infty$ närmar den sig asymptoten $y = 2x - 3$, och när kurvan går mot $+\infty$ närmar den sig asymptoten $y = 2x - 1$.
 
 \newpage
 
@@ -213,6 +213,7 @@ Vi får inte heller blanda ihop de sneda asymptoterna, när kurvan går mot $-\i
   -\frac{8}{\sqrt{2}} - 5 \approx -11 \quad \text{och} \quad \frac{8}{\sqrt{2}} - 5 \approx 1\text{.}
 \end{gather*}
 
+Slutligen, den ritade grafen:
 \begin{figure}[h]
   \centering
   \includegraphics[width=10cm, angle=270]{skiss.jpg}
