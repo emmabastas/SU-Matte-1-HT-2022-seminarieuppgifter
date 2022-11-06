@@ -9,9 +9,9 @@
 \usetikzlibrary{calc, intersections}
 
 
-\title{Analysuppgift 3 - Analys av kurva}
+\title{Analysuppgift 5 - Area under kurvor}
 \author{Emma Bastås}
-\date{Oktober 30, 2022}
+\date{November 6, 2022}
 
 \begin{document}
 
@@ -20,11 +20,11 @@
 \noindent Uppgiften är att beräkna arean av de område som begränsas av kurvorna $y = f(x)$ och $y = g(x)$ där:
 
 \begin{gather*}
-  f(x) = x^{2} \quad\quad g(x) = 2 - x\text{.}
+  f(x) = x^{2} \quad\text{och}\quad g(x) = 2 - x\text{.}
 \end{gather*}
 \\
 \\
-Utan att göra någon mer detaljerad analys av kurvornas utsende så kan vi endå säga att grafen till dessa två kurvor kring origo ser ut ungefär såhär:
+Utan att göra någon mer detaljerad analys av kurvornas utseende så kan vi ändå säga att grafen till dessa två kurvor kring origo ser ut ungefär såhär:
 
 \begin{center}
   \begin{tikzpicture}
@@ -38,40 +38,44 @@ Utan att göra någon mer detaljerad analys av kurvornas utsende så kan vi end�
   \end{tikzpicture}
 \end{center}
 
-Denna bild bygger på två antaganden:
+\noindent Vi har här gjort två antaganden:
 
 \begin{enumerate}
-        \item linjen $y = g(x)$ skär kurvan $y = f(x)$ i två skiljda punkter $x = a$ och $x = b$. Detta kommer vi att verifiera senare i texten.
-        \item Ingen av kurvorna går under $x$-axeln i intervallet $[a,b]$. Det är uppenbart att $y = f(x)$ aldrig går under $x$-axeln, om det första angtagandet gäller så kommer heller aldrig linjen $y = g(x)$ att skära $x$-axeln i intervallet.
+        \item linjen $y = g(x)$ skär kurvan $y = f(x)$ i två skilda punkter $x = a$ och $x = b$. Detta kommer vi senare att verifiera.
+        \item Ingen av kurvorna går under $x$-axeln i intervallet $[a,b]$. Det är uppenbart att $y = f(x)$ aldrig går under $x$-axeln, om det första antagandet gäller så kommer heller aldrig linjen $y = g(x)$ att skära $x$-axeln i intervallet.
 \end{enumerate}
 
 \noindent Det som vi ska beräkna är arean av området $A$. Arean under $y = f(x)$ i området $[a, b]$ ges av $\int_{a}^{b} f(x) \,\mathrm{d}x = B$. Arean under $y = g(x)$ i området $[a, b]$ ges av $\int_{a}^{b} g(x) \,\mathrm{d}x = A + B$. Vi får då ett uttryck för arean $A$:
 
 \begin{gather}
-  A = (A + B) - B = \int_{a}^{b} g(x) \,\mathrm{d}x - \int_{a}^{b} f(x) \,\mathrm{d}x \label{1}
+  A = (A + B) - B = \int_{a}^{b} g(x) \,\mathrm{d}x - \int_{a}^{b} f(x) \,\mathrm{d}x\text{.} \label{1}
 \end{gather}
 
-\noindent Både $f(x)$ och $g(x)$ är kontinuerliga för alla rella värden på $x$. Om $F(x)$ och $G(x)$ är antiderivator till $f(x)$ respektive $g(x)$ ger analysens huvudsats att:
+\noindent Både $f(x)$ och $g(x)$ är kontinuerliga för alla reella värden på $x$. Om $F(x)$ och $G(x)$ är primitiva funktion till $f(x)$ respektive $g(x)$ ger analysens huvudsats att:
 
 \begin{align}
   \text{(\ref{1})} &= (G(b) - G(a)) - (F(b) - F(a)) \notag\\
   &= G(b) - G(a) - F(b) + F(a)\text{.} \label{2}
 \end{align}
 
-\noindent Det som återstår nu är att finna antiderivatorna $F(x)$ och $G(x)$ samt skärningspunkterna $a$ och $b$.
+\noindent Det som återstår nu är att finna primitiva funktioner till $f(x)$ och $g(x)$ samt skärningspunkterna $a$ och $b$.
 \\
 \\
-\noindent Att finna $a$ och $b$ är lösningarna till andragradsekvationen $f(x) = g(x)$, de två lösningarna är $x = -2$ och $x = 1$, d.v.s $a = -2$ och $b = 1$. Nu har vi även verifierat att antaganderna som vi gjorde om kurvorna tidigare gäller.
+\noindent Skärningspunkterna $a$ och $b$ är lösningarna till andragradsekvationen $f(x) = g(x)$, de två lösningarna är $x = -2$ och $x = 1$, d.v.s $a = -2$ och $b = 1$. Nu har vi även verifierat att antagandena som vi gjorde om kurvorna tidigare gäller.
 \\
 \\
-\noindent Att fina antiderivatorna är inte heller så svårt, vi finner att $F(x) =\tfrac{1}{3}x^{3} + C$ och $G(x) = 2x - \tfrac{1}{2}x^{2} + D$ där $C$ och $D$ är två okända konstanter.
+\noindent Att finna primitiva funktioner görs med integreringsregler för polynom. Vi finner att $F(x) =\tfrac{1}{3}x^{3} + C$ och $G(x) = 2x - \tfrac{1}{2}x^{2} + D$ där $C$ och $D$ är två okända konstanter.
 \\
 \\
 \noindent Det som återstår nu är att beräkna värdet på (\ref{2}):
 
 \begin{gather*}
-  G(1) - G(-2) - F(1) + F(-2) = \frac{9}{2}
+  G(1) - G(-2) - F(1) + F(-2) = \frac{9}{2}\text{.}
 \end{gather*}
+
+\noindent Vi har alltså visat att $A = \frac{9}{2}$ vilket är vad som söktes.
+\\
+\\
 
 \centering{$\qed$}
 
