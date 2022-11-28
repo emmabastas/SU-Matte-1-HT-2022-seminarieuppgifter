@@ -1,0 +1,99 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{mathtools}
+
+\title{Analysuppgift 6 - Extrempunkter för tvåvariabelsfunktion}
+\author{Emma Bastås}
+\date{November 22, 2022}
+
+\begin{document}
+
+\maketitle
+
+\noindent Uppgiften är att bestämma största och minsta värde för funktionen:
+
+\begin{gather*}
+  f(x, y) = x^{2} - 2x + 2y^{2} + 2
+\end{gather*}
+\\
+på området: $D = \{ (x, y): x \geq 0,\; x^{2} + y^{2} \leq 4 \}$.
+\\
+\\
+Från kompendiet i flervariabelanalys\footnote{Tamm, \emph{Inledning till flervariabelanalys} s.5 sats 1} ges att en kontinuerlig funktion på en kompakt mängd alltid antar ett största och ett minsta värde, och att extremvärdena alltid antas i någon av följande typer av punkter:
+
+\begin{enumerate}
+  \item[\emph{i})] Randpunkter till mängden.
+  \item[\emph{ii})] Punkter inuti området där funktionen inte är partiellt deriverbar.
+  \item[\emph{iii})] Punkter inuti området där de partiella derivatorna är noll (samtidigt).
+\end{enumerate}
+
+\noindent Vad kompakta mängder och randpunkter till dessa mängder är har precisa matematiska definitioner.. Som ligger utanför analyskursen. Det som får antas är att området $D$ utgör en kompakt mängd, och att alla randpunkterna till $D$ ligger på de två randkurvorna:
+
+\begin{align*}
+  x &= 0, \; y^{2} \leq 4 \label{*}\tag{$\star$} \\
+  x^{2} + y^{2} &= 4, \; x \geq 0\text{.} \label{**}\tag{$\star\star$}
+\end{align*}
+\\
+Då vi saknar tydliga definitioner att jobba med så följer två mer eller mindre handviftande förklaringar till varför just dessa kurvor ska väljas och inte några andra:
+
+\begin{enumerate}
+  \item Området $D$ utgör alla punkter som uppfyller de två kraven: $x \geq 0$ och $x^{2} + y^{2} \leq 4$. Betraktar vi randkurvan (\ref{*}) så utgör den alla punkter som uppfyller det första kravet $x \geq 0$ med så små marginaler som möjligt. Hade vi istället haft randkurvan $x + \epsilon = 0, \; y^{2} \leq 4$ där $\epsilon > 0$ så hade inga punkter på kurvan uppfyllt första kravet oavett hur litet $\epsilon$ som väljs. Alla punkterna på randkurvan (\ref{*}) uppfyller också det andra kravet $x^{2} + y^{2} \leq 4$, men då vi låtit $x = 0$ blir $x^{2}$-termen verkningslös och kan plockas bort ur kravet. \\
+  Randkurvan (\ref{**}) innehåller på motsvarande sätt alla punkter som uppfyller det andra kravet $x^{2} + y^{2} \leq 4$ med så små marginaler som möjligt.
+  \item Ritar vi upp området $D$ och randkurvorna (\ref{*}) och (\ref{**}) i valfritt grafritningsprogram så ser vi att randkurvorna ligger precis på kanten till området $D$, även om vi zoomar in väldigt mycket.
+\end{enumerate}
+
+\noindent Vi börjar med att söka extremvärden inuti området (fall (\emph{ii}) och (\emph{iii})). Vi bestämmer partiella derivator till $f$ med avseende på $x$ respektive $y$:
+
+\begin{gather*}
+  \frac{f}{\partial x} = 2x - 2 \quad\quad \frac{f}{\partial y} = 4y\text{.}
+\end{gather*}
+\\
+Den första observationen är att dessa derivator är väldefinierade för alla punkter $(x, y) \in \mathbb{R}^{2}$, alltså är fallet (\emph{ii}) uteslutet, det finns inga punkter där $f(x)$ inte är partiellt deriverbar.
+\\
+Vi finner att båda partiella derviator är noll (samtidigt) om och endast om $(x, y) = (1, 0)$, vilket gör detta till den enda punkten av typ (\emph{iii}).
+\\
+\\
+Det blir tydligt att $(x, y) = (1, 0)$ är ett minimivärde och inte ett maximivärde om vi kvadratkompletterar $f(x, y)$:
+
+\begin{align*}
+  f(x, y) = (x - 1)^{2} + 2y^2 + 1\text{.}
+\end{align*}
+\\
+De båda kvadratiska termerna är alltid positiva, så det minsta värdet på $f(x, y)$ antas då dessa termer är noll, vilket just i punkten $(x, y) = (1, 0)$. Vi har nu visat att $f(1, 0) = 1$ är minimivärdet.
+\\
+\\
+Vi har undersökt punkter av typ (\emph{ii}) och (\emph{iii}) och funnit minimivärdet, då återstår bara punkter av typ (\emph{i}) och vi vet således att det är här vi finner maximivärdet.
+\\
+Randpunkterna ligger på randkurvorna (\ref{*}) och (\ref{**}), vi börjar med den första kurvan. Om vi definierar en ny funktion $g(y)$:
+
+\begin{gather*}
+  g(y) = f(0, y) = 2y^{2} + 2, \quad y^{2} \leq 4
+\end{gather*}
+\\
+så kommer $g(y)$ att anta precis samma värden som $f(x, y)$ gör på randkurvan (\ref{*}), finner vi ett maxvärde till $g(y)$ så har vi gjort det för $f(x, y)$ på randkurvan (\ref{*}). Utan någon ordentligare analys så ser vi tydligt att $g(y)$ är en andragradsekvation med minimivärde i $y = 0$ och att den antar sina största värden i randpunkterna: $g(\pm2) = f(0, \pm2) = 10$.
+\\
+\\
+Nu går vi vidare till randkurvan (\ref{**}). Denna kurvan utgör en halvcirkel. Av trigonometriska ettan följer att punkten $(\cos\theta, \sin\theta)$ ligger på enhetscirkeln $x^{2} + y^{2} = 1$ för alla reella värden på $\theta$. Då följer att $(2\cos\theta, 2\sin\theta)$ ligger på cirkeln $x^{2} + y^{2} = 4$ för alla reella $\theta$. Således kan vi parametrisera $f(x, y)$ med funktionen $h(\theta)$:
+
+\begin{gather*}
+  h(\theta) = f(2\cos\theta, 2\sin\theta), \quad \cos\theta \geq 0\text{.}
+\end{gather*}
+\\
+Funktionen $h(\theta)$ kommer att anta precis de värden som $f(x, y)$ antar på randkurvan (\ref{**}). Vi bearbetar $h(\theta)$ algebraiskt:
+
+\begin{align*}
+  h(\theta) &= 4\cos^{2}\theta - 2\cos\theta + 8\sin^{2}\theta + 2, & \cos\theta \geq 0 \\
+            &= 4(\cos^{2}\theta + \sin^{2}\theta) -2\cos\theta + 4\sin^{2}\theta + 2, & \cos\theta \geq 0 \\
+            &= 4 - 2\cos\theta + 4\sin^{2}\theta + 2, & \cos\theta \geq 0\\
+            &= 4\sin^{2}\theta - 2\cos\theta + 6, & \cos\theta \geq 0\text{.}
+\end{align*}
+\\
+Det största värdet som $\sin^{2}$-termen kan anta är $4$ när $\theta = \pm\tfrac{\pi}{2} + 2\pi n$. Med villkoret $\cos\theta \geq 0$ så är det största värdet som $\cos$-termen kan anta $0$, också när $\theta = \pm\tfrac{\pi}{2} + 2\pi n$. Det största värdet som $h(\theta)$ kan anta är då $h(\pm\tfrac{\pi}{2} + 2\pi n) = f(0, \pm2) = 10$. Dessa två maximipunkter är samma punkter som vi fann på randkurvan (\ref{*}).
+\\
+\\
+Vi har nu funnit minimi- och maximivärdet för $f(x, y)$ på det givna området. Minimivärdet ligger inuti området i punkten $(x, y) = (1, 0)$ och dess värde är $1$. Maximivärdet ligger på ``hörnen'' till randkurvan i punkterna $(x, y) = (\pm 2, 0)$ och dess maximivärde är $10$.
+
+\end{document}
