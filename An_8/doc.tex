@@ -1,0 +1,103 @@
+\documentclass{article}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{mathtools}
+
+\title{Analysuppgift 8 - Differentialekvationer}
+\author{Emma Bastås}
+\date{December 11, 2022}
+
+\begin{document}
+
+\maketitle
+
+\noindent Uppgiften är att bestämma alla lösningar till differentialekvationen:
+
+\begin{gather}
+  y'(x) = y^{2} + 4y(x) - 5\text{.} \label{1}\tag{$\star$}
+\end{gather}
+
+\noindent Vi börjar med att kvadratkomplettera högerledet:
+
+\begin{gather}
+  \text{(\ref{1})} \iff y'(x) = (y(x) - 1)(y(x) + 5)\text{.} \label{2}
+\end{gather}
+
+\noindent Med antagandet att $y(x) \neq 1$ och $y(x) \neq -5$ så kan vi dividera båda led med $(y(x) - 1)(y(x) + 5)$:
+\begin{gather}
+  \text{(\ref{2})} \iff y'(x) \frac{1}{(y(x) - 1)(y(x) + 5)} = 1, \quad y(x) \neq 1, \; y(x) \neq -5\text{.} \label{3}
+\end{gather}
+
+\noindent Senare i texten kommer vi att hantera fallet $y(x) = 1$ och $y(x) = -5$, för tillfället så lämnar vi dessa och bearbetar (\ref{3}) ytterligare.
+Vi ser nu att (\ref{3}) är en separabel differentialekvation. Vi partialbråksuppdelar:
+
+\begin{gather}
+  \text{(\ref{3})} \iff y'(x) \biggl( \frac{1}{6(y(x) - 1)} - \frac{1}{6(y(x) + 5)} \biggr) = 1\text{.} \label{4}
+\end{gather}
+
+\noindent Vi bryter ut $\tfrac{1}{6}$ ur bråken, multiplicerar in $y'(x)$ och multiplicerar båda led med $6$:
+
+\begin{align}
+  \text{(\ref{4})} &\iff y'(x) \frac{1}{6} \biggl(\frac{1}{y(x) - 1} - \frac{1}{y(x) +5} \biggr) = 1 \notag \\
+  & \iff \frac{y'(x)}{y(x) - 1} - \frac{y'(x)}{y(x) + 5} = 6\text{.} \label{5}
+\end{align}
+
+\noindent Vi integrerar båda led:
+
+\begin{align}
+  \text{(\ref{5})} &\iff \int \biggl( \frac{y'(x)}{y(x) - 1} - \frac{y'(x)}{y(x) + 5} \biggr) \;\mathrm{d}x = \int 6 \;\mathrm{d}x \notag \\
+  &\iff \int \frac{y'(x)}{y(x) - 1} \;\mathrm{d}x - \int \frac{y'(x)}{y(x) + 5} \;\mathrm{d}x = \int 6 \;\mathrm{d}x\text{.} \label{6}
+\end{align}
+
+\noindent Dessa typer av integraler känner vi igen, vi minns att $\frac{\mathrm{d}}{\mathrm{d}x} \ln f(x) = \frac{f'(x)}{f(x)}$ och kan därav bestämma integralerna i vänsterledet, integralen i högerledet är trivial:
+
+\begin{gather}
+  \text{(\ref{5})} \iff \ln(y(x) - 1) - \ln(y(x) + 5) = 6x + C\text{.} \label{6}
+\end{gather}
+
+\noindent Här representerar $C \in \mathbb{R}$ den obestämda konstant som uppstår vid integrationen av de tre termerna. Vi bearbetar (\ref{6}) så att vi får ett ensamt $y(x)$ i vänsterledet:
+
+\begin{align}
+  \text{\ref{6}} &\iff \ln \frac{y(x) - 1}{y(x) + 5} = 6x + C \notag \\
+                 &\iff \frac{y(x) - 1}{y(x) + 5} = e^{6x + C} \notag \\
+                 &\iff y(x) - 1 = (y(x) + 5)e^{6x + C} \notag \\
+                 &\iff y(x) - 1 = y(x)e^{6x + C} + 5e^{6x + C} \notag \\
+ %                &\iff y(x) - 1 \notag
+ %                  \begin{aligned}[t]
+ %                    &= (y(x) + 5)e^{6x + C} \notag \\
+ %                    &= y(x)e^{6x + C} + 5e^{6x + C} \notag
+ %                  \end{aligned} \\
+                 &\iff y(x) - y(x)e^{6x + C} = 1 + 5e^{6x + C} \notag \\
+                 &\iff y(x)(1 - e^{6x + C}) = 1 + 5e^{6x + C} \notag \\
+  &\iff y(x) = \frac{1 + 5e^{6x + C}}{1 - e^{6x + C}}\text{.} \label{general}
+\end{align}
+
+\noindent Nu har vi funnit (\ref{general}) som är en lösning till (\ref{1}) för alla $C \in \mathbb{R}$. Nu återstår fallen $y(x) = 1$ och $y(x) = -5$. Vi testar helt enkelt om dom är lösningar till (\ref{1}) medelst insättning i den ekvivalenta ekvationen (\ref{2}):
+\\
+\\
+\textbf{Fallet: $y(x) = 1$}
+\begin{align*}
+  & y'(x) = (y(x) - 1)(y(x) + 5) \quad \text{och} \quad y(x) = 1 \\
+  \iff\; & 0 = (1 - 1)(1 + 5) = 0\text{.}
+\end{align*}
+\\
+\textbf{Fallet: $y(x) = - 5$}
+
+\begin{align*}
+  & y'(x) = (y(x) - 1)(y(x) + 5) \quad \text{och} \quad y(x) = -5 \\
+  \iff\; & 0 = (-5 - 1)(-5 + 5) = 0\text{.}
+\end{align*}
+
+\noindent Det visar sig att både $y(x) = 1$ och $y(x) = -5$ är \emph{konstanta lösningar} till (\ref{1}).
+\\
+\\
+\noindent Nu har vi alltså visat att samtliga lösningar till (\ref{1}) är:
+
+\begin{align*}
+  & y(x) = 1, \quad y(x) = -5, \\[4pt]
+  & y(x) = \frac{1 + 5e^{6x + C}}{1 - e^{6x + C}}, \; \text{för alla}\; C \in \mathbb{R}\text{.}
+\end{align*}
+
+\end{document}
